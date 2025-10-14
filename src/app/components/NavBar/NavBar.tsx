@@ -66,7 +66,6 @@ const NavBar = () => {
                 </li>
               ))}
 
-              {/* dropdown section */}
               <li className="group relative cursor-pointer">
                 <Link href="/#" className="flex items-center h-[72px] gap[2px]">
                   Quick Links
@@ -75,7 +74,6 @@ const NavBar = () => {
                   </span>
                 </Link>
 
-                {/* dropdown Link section */}
                 <div className="absolute -left-9 z-[10] hidden group-hover:block text-black bg-white p-2 shadow-md w-[150px]">
                   <ul>
                     {DropdownLinks.map((data) => (
@@ -92,7 +90,6 @@ const NavBar = () => {
                 </div>
               </li>
             </ul>
-            {/* <button className="btn btn-primary">Order</button> */}
             <button className="bg-gradient-to-r from-primary-normal to-secondary-normal text-white px-4 py-1 rounded-full flex items-center gap-3 hover:scale-105 duration-300">
               Order
               <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />

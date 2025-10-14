@@ -34,7 +34,6 @@ const Footer = () => {
     <div className="bg-gray-100 dark:bg-gray-950">
       <section className="container">
         <div className=" grid md:grid-cols-3 py-5">
-          {/* company Details */}
           <div className=" py-8 px-4 ">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
               <Image src={footerLogo} alt="Logo" className="max-w-[50px]" />
@@ -53,7 +52,6 @@ const Footer = () => {
               <FaMobileAlt />
               <p>+91 123456789</p>
             </div>
-            {/* Social Handle */}
             <div className="flex items-center gap-3 mt-6">
               <Link href="#">
                 <FaInstagram className="text-3xl" />
@@ -66,7 +64,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          {/* Links */}
           <div className="grid grid-cols-2 sm:grid-cols-3 col-span-2 md:pl-10 ">
             <div className="">
               <div className="py-8 px-4 ">

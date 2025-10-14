@@ -31,7 +31,6 @@ const ImageList = [
 ];
 
 const HeroSection = () => {
-  // Use useState directly (not React.useState)
   const [imageId, setImageId] = useState(Book1);
   const [title, setTitle] = useState("His Life will forever be Changed");
   const [description, setDescription] = useState(
@@ -55,7 +54,6 @@ const HeroSection = () => {
       >
         <div className="container pb-8 sm:pb-0">
           <div className="grid grid-cols-1 sm:grid-cols-2">
-            {/* text content section */}
             <div
               data-aos-once="true"
               className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1"
@@ -88,7 +86,6 @@ const HeroSection = () => {
                 </button>
               </div>
             </div>
-            {/* Image section */}
             <div className="min-h-[450px] sm:min-h-[450px] flex justify-center items-center relative order-1 sm:order-2 ">
               <div className="h-[300px] sm:h-[450px] overflow-hidden flex justify-center items-center">
                 <Image
@@ -109,7 +106,7 @@ const HeroSection = () => {
                     data-aos-once="true"
                     src={item.img}
                     onClick={() => {
-                      setImageId(item.img); // Simplified
+                      setImageId(item.img);
                       setTitle(item.title);
                       setDescription(item.description);
                     }}

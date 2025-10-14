@@ -12,6 +12,8 @@ import Testimonial from "./components/Testimonial/Testimonial";
 import Footer from "./components/Footer/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import BookSearch from "@/app/components/BookSearch/BookSearch";
+import Link from "next/link";
 
 const Home = () => {
   // function handleOrderPopUp() {}
@@ -22,6 +24,13 @@ const Home = () => {
       <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
         <NavBar />
         <HeroSection />
+        <Link
+          href="/rich-text-editor"
+          className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+          Create Your Blog
+        </Link>
+        <BookSearch />
         <BestBooks />
         <Banner />
         <AppStoreBanner />

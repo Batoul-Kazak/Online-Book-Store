@@ -47,7 +47,6 @@
 
 // export default DarkMode;
 
-// components/DarkMode.jsx
 "use client";
 import { useState, useEffect } from "react";
 import DarkPng from "@/app/assets/website/dark-mode-button.png";
@@ -58,7 +57,6 @@ const DarkMode = () => {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState("light");
 
-  // Only run on client side
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem("theme") || "light";
@@ -85,7 +83,6 @@ const DarkMode = () => {
     }
   }, [theme, mounted]);
 
-  // Don't render until mounted to avoid hydration issues
   if (!mounted) {
     return null;
   }
