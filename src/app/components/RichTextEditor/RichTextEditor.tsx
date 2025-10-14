@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
+import backgroundImg from "@/app/assets/website/big_background.jpg";
 
 interface BlogEntry {
   id: string;
@@ -12,6 +13,15 @@ interface BlogEntry {
     content: string;
   };
 }
+
+const bgImage = {
+  backgroundImage: `url(${backgroundImg.src})`,
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  height: "10rem",
+  width: "100%",
+};
 
 const RichTextEditor = () => {
   const editorRef = useRef<HTMLDivElement>(null);
@@ -96,7 +106,10 @@ const RichTextEditor = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
+    <div
+      className="max-w-6xl mx-auto p-4 min-h-screen bg-cover bg-center bg-no-repeat"
+      style={bgImage}
+    >
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex-1">
           <div className="mb-4">
@@ -105,7 +118,7 @@ const RichTextEditor = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Note title..."
-              className="w-full px-3 py-2 text-lg border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+              className="w-full px-3 py-2 text-lg border border-gray-300 text-2xl text-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
@@ -195,12 +208,12 @@ const RichTextEditor = () => {
         </div>
 
         <div className="lg:w-80">
-          <h2 className="text-lg font-semibold text-gray-800 mb-3">
+          <h2 className="text-2xl font-semibold text-white mb-3">
             Saved Notes
           </h2>
           <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
             {savedNotes.length === 0 ? (
-              <p className="text-gray-500 text-sm">No notes saved yet.</p>
+              <p className="text-blue-500 text-sm">No notes saved yet.</p>
             ) : (
               savedNotes.map((note) => (
                 <div
@@ -220,7 +233,7 @@ const RichTextEditor = () => {
                         __html: note.userInfo.content,
                       }}
                     />
-                    <span className="text-xs text-gray-400 block mt-1">
+                    <span className="text-xs text-gray-100 block mt-1">
                       Note #{note.userInfo.blogNum}
                     </span>
                   </button>

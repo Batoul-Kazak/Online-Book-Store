@@ -175,7 +175,7 @@ export default function BookSearch() {
         component="h1"
         gutterBottom
         align="center"
-        color="text.primary"
+        color="white"
       >
         Search Free Books
       </Typography>
@@ -191,13 +191,28 @@ export default function BookSearch() {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <SearchIcon color="action" />
+              <SearchIcon sx={{ color: "white" }} />
             </InputAdornment>
           ),
+          sx: {
+            color: "white", // text color
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white", // border color
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white",
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white",
+            },
+            "& .MuiInputBase-input::placeholder": {
+              color: "white",
+              opacity: 0.7,
+            },
+          },
         }}
         sx={{ mb: 4 }}
       />
-
       {error && (
         <Alert severity="error" sx={{ mb: 3 }}>
           {error}
