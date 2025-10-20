@@ -1,0 +1,26 @@
+{
+  "common": {
+    "home": "Home",
+    "books": "Books",
+    "cart": "Cart",
+    "profile": "Profile",
+    "login": "Login",
+    "signup": "Sign Up",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "book": {
+    "title": "Title",
+    "author": "Author",
+    "price": "Price",
+    "free": "Free",
+    "addToCart": "Add to Cart",
+    "description": "Description"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "rememberMe": "Remember me"
+  }
+}

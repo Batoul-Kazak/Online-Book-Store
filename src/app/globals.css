@@ -2,29 +2,150 @@
 @import "tailwindcss";
 
 :root {
-  /* Light mode colors */
-  --color-primary: #3b82f6;    /* beautiful blue */
-  --color-secondary: #f97316;  /* complementary orange */
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary-dark: #0065ab;    
+  --color-primary: #1960d4;   
+  --color-primary-very-dark: #00558d;     
+  --color-primary-light: #75D0FF;    
+  --color-primary-very-light: #b6e4ff;    
+  --color-secondary: #eb4985;  
+  --color-secondary-dark: #bd1949;  
+  --color-secondary-very-dark: #9c183d;  
+  --color-secondary-light: #f8a9ca;  
+  --color-secondary-very-light: #fbcfe3;  
+  --color-silver: #435061;
+  --color-silver-light: #677a90;
+  --color-silver-very-light: #b1bcc8;
+  --color-silver-dark: #3d4856;
+  --color-silver-very-dark: #343b46;
+  --color-light-black: #22272f;
+  --color-dark-black: #111418;
 }
 
+button:hover {
+  transition: transform 500ms;
+  transform: scale(1.05);
+}
 
+@theme {
+--color-primary: var(--color-primary);    
+  --color-primary-dark: var(--color-primary-dark);   
+  --color-primary-very-dark: var(--color-primary-very-dark);     
+  --color-primary-light: var(--color-primary-light);    
+  --color-primary-very-light: var(--color-primary-very-light);    
+  --color-secondary: var(--color-secondary);  
+  --color-secondary-dark: var(--color-secondary-dark);  
+  --color-secondary-very-dark: var(--color-secondary-very-dark);  
+  --color-secondary-light: var(--color-secondary-light);  
+  --color-secondary-very-light: var(--color-secondary-very-light);    --color-silver: #435061;
+  --color-silver: var(--color-silver);
+  --color-silver-light: var(--color-silver-light);
+  --color-silver-dark: var(--color-silver-dark);
+  --color-silver-very-dark: var(--color-silver-very-dark);
+  --color-silver-very-light: var(--color-silver-very-light);
+  --color-light-black: var(--color-light-black);
+  --color-dark-black: var(--color-dark-black);
+}
 
 @layer base{
     body {
-        @apply dark:bg-gray-800 bg-white
+        @apply dark:bg-light-black bg-white
     }
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;   
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;            
+}
 
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes swivel {
+  0% {
+    transform: perspective(1000px) rotateX(10deg) rotateY(-10deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(10deg) rotateY(-10deg);
+  }
+}
+
+.hover-child:hover{
+  /* opacity: 50%; */
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.animate-swivel {
+  animation: swivel 2s ease-in-out infinite;
+}
+
+.text-hue-light {
+  text-shadow: 
+    0 0 8px var(--color-primary-very-dark),    
+    0 0 16px var(--color-primary),  
+    0 0 24px var(--color-primary-dark);   
+  color: var(--color-primary-very-light);
+}
+
+.text-hue {
+  text-shadow: 
+    0 0 8px #002aff,    
+    0 0 16px #00ffff,  
+    0 0 24px #15ff00;   
+  color: white;
+}
+
+.dark-text-hue {
+  text-shadow: 
+    0 0 8px #000c4a,   
+    0 0 16px #004141,   
+    0 0 24px #043600;  
+  color: black;
+}
+
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(7.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+/* button{
+  bg-gradient-to-r from-primary to-secondary font-bold text-white py-3 px-5 rounded-2xl
+
+  background-image: linea;
+}  */
 
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark mode colors */
-    --color-primary: #60a5fa;   /* lighter blue for dark mode */
-    --color-secondary: #fb923c; /* lighter orange for dark mode */
+    --color-primary: #60a5fa;  
+    --color-secondary: #ec4899; 
     --background: #0a0a0a;
     --foreground: #ededed;
   }

@@ -118,13 +118,13 @@ const RichTextEditor = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Note title..."
-              className="w-full px-3 py-2 text-lg border border-gray-300 text-2xl text-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 text-lg border border-silver-light text-2xl text-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
 
-          <div className="flex flex-wrap gap-2 p-3 bg-gray-100 rounded-lg border border-gray-300 mb-4">
+          <div className="flex flex-wrap gap-2 p-3 bg-gray-100 rounded-lg border border-silver-light mb-4">
             <div className="flex items-center gap-1">
-              <label className="text-sm font-medium text-gray-700">
+              <label className="text-sm font-medium text-silver-dark">
                 Color:
               </label>
               <input
@@ -136,11 +136,13 @@ const RichTextEditor = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              <label className="text-sm font-medium text-gray-700">Size:</label>
+              <label className="text-sm font-medium text-silver-dark">
+                Size:
+              </label>
               <select
                 value={fontSize}
                 onChange={handleFontSizeChange}
-                className="text-sm border rounded px-2 py-1 text-gray-700"
+                className="text-sm border rounded px-2 py-1 text-silver-dark"
               >
                 <option value="12px">Small</option>
                 <option value="16px">Normal</option>
@@ -153,19 +155,19 @@ const RichTextEditor = () => {
             <div className="flex items-center gap-1">
               <button
                 onClick={toggleBold}
-                className="px-2 py-1 text-sm bg-white border rounded hover:bg-gray-200 text-gray-700 font-bold"
+                className="px-2 py-1 text-sm bg-white border rounded hover:bg-silver-very-light text-silver-dark font-bold"
               >
                 B
               </button>
               <button
                 onClick={toggleItalic}
-                className="px-2 py-1 text-sm bg-white border rounded hover:bg-gray-200 text-gray-700 italic"
+                className="px-2 py-1 text-sm bg-white border rounded hover:bg-silver-very-light text-silver-dark italic"
               >
                 I
               </button>
               <button
                 onClick={toggleUnderline}
-                className="px-2 py-1 text-sm bg-white border rounded hover:bg-gray-200 text-gray-700 underline"
+                className="px-2 py-1 text-sm bg-white border rounded hover:bg-silver-very-light text-silver-dark underline"
               >
                 U
               </button>
@@ -173,7 +175,7 @@ const RichTextEditor = () => {
 
             <button
               onClick={toggleDirection}
-              className="px-2 py-1 text-sm bg-white border rounded hover:bg-gray-200 text-gray-700"
+              className="px-2 py-1 text-sm bg-white border rounded hover:bg-silver-very-light text-silver-dark"
             >
               {direction === "ltr" ? "← RTL" : "LTR →"}
             </button>
@@ -183,7 +185,7 @@ const RichTextEditor = () => {
             ref={editorRef}
             contentEditable
             dir={direction}
-            className="min-h-[200px] p-4 border border-gray-400 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+            className="min-h-[200px] p-4 border border-silver-light rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-silver-dark"
             style={{
               fontSize,
               ...(color && { color }),
@@ -200,7 +202,7 @@ const RichTextEditor = () => {
             </button>
             <button
               onClick={handleClear}
-              className="px-4 py-2 bg-gray-600 text-white font-medium rounded hover:bg-gray-700 transition-colors"
+              className="px-4 py-2 bg-silver text-white font-medium rounded hover:bg-silver-dark transition-colors"
             >
               Clear
             </button>
@@ -218,17 +220,17 @@ const RichTextEditor = () => {
               savedNotes.map((note) => (
                 <div
                   key={note.id}
-                  className="border border-gray-200 rounded p-3 bg-gray-50 hover:bg-gray-100 relative"
+                  className="border border-silver-very-light rounded p-3 bg-gray-50 hover:bg-gray-100 relative"
                 >
                   <button
                     onClick={() => handleLoadNote(note)}
                     className="w-full text-left"
                   >
-                    <h3 className="font-medium text-gray-800">
+                    <h3 className="font-medium text-silver-very-dark">
                       {note.userInfo.title}
                     </h3>
                     <p
-                      className="text-sm text-gray-600 mt-1 line-clamp-2"
+                      className="text-sm text-silver mt-1 line-clamp-2"
                       dangerouslySetInnerHTML={{
                         __html: note.userInfo.content,
                       }}
@@ -239,7 +241,7 @@ const RichTextEditor = () => {
                   </button>
                   <button
                     onClick={() => handleDeleteNote(note.id)}
-                    className="absolute top-2 right-2 text-gray-500 hover:text-red-600"
+                    className="absolute top-2 right-2 text-silver hover:text-red-600"
                     title="Delete note"
                   >
                     🗑️

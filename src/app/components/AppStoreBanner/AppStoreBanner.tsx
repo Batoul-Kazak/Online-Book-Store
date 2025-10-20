@@ -17,15 +17,21 @@ const bannerImage = {
 const AppStoreBanner = () => {
   return (
     <div
-      className="bg-gray-100 dark:bg-gray-800 text-white py-10"
+      className="bg-gray-100 dark:bg-silver-very-dark text-white py-10"
       style={bannerImage}
     >
       <div className="space-y-6 max-w-xl mx-auto">
         <div>
-          <h1 className="text-2xl text-center sm:text-4xl font-semibold">
+          <h1
+            data-aos="slide-down"
+            className="text-2xl text-center sm:text-4xl font-semibold p-5"
+          >
             Read Books at your fingertips
           </h1>
-          <div className="flex flex-wrap justify-center items-center gap-4">
+          <div
+            data-aos="slide-up"
+            className="flex flex-wrap justify-center items-center gap-4"
+          >
             <Link href="#">
               <Image
                 src={PlayStoreImage}

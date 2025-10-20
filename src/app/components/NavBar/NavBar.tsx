@@ -1,54 +1,68 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "@/app/assets/website/logo.png";
 import Image from "next/image";
+import defaultProfileImage from "@/app/assets/website/defaultProfileImage.png";
 import { it } from "node:test";
-import { FaCaretDown } from "react-icons/fa";
+
 import { FaCartShopping } from "react-icons/fa6";
 import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
+import { AppContext } from "@/app/context/AppContext";
+import { useTranslation } from "@/app/context/TranslationContext";
 // import "../../globals.css";
 
 const Menu = [
+  // {
+  //   id: 2,
+  //   name: "Best Seller",
+  //   link: "/#services",
+  // },
   {
     id: 1,
-    name: "Home",
-    link: "/#",
+    name: "Free Books",
+    link: "/books",
   },
-  {
-    id: 2,
-    name: "Best Seller",
-    link: "/#services",
-  },
-];
 
-const DropdownLinks = [
-  {
-    id: 1,
-    name: "Trending Books",
-    link: "/#",
-  },
   {
     id: 2,
-    name: "Best Selling",
-    link: "/#",
+    name: "All books",
+    link: "/books",
   },
   {
     id: 3,
-    name: "Authors",
-    link: "/#",
+    name: "Notes",
+    link: "/rich-text-editor",
   },
 ];
 
+const languages = [
+  { value: "en", name: "English" },
+  { value: "ru", name: "Русский" },
+  { value: "ar", name: "العربية" },
+  { value: "de", name: "Deutsch" },
+];
+
 const NavBar = () => {
+  const {
+    currentLoggedinUser,
+    setShowSignUpPopup,
+    setCurrentLoggedinUser,
+    setShowLoginPopup,
+  } = useContext(AppContext);
+  const { t, lang, setLang } = useTranslation();
+
   return (
-    <nav className="shadow-lg bg-white dark:bg-gray-900 dark:text-white duration-200">
+    <nav className="shadow-lg bg-light-black dark:bg-my-black dark:text-white duration-200 ">
       <div className="sm:p-48 p-16 py-3 sm:py-0">
         <div className="flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
+            <Link
+              href="/"
+              className="font-bold text-2xl sm:text-3xl flex gap-2"
+            >
               <Image src={Logo} alt="logo" className="w-10" />
-            </a>
+            </Link>
             <p>Books</p>
           </div>
           <div className="flex items-center justify-between gap-4">
@@ -57,53 +71,120 @@ const NavBar = () => {
               {Menu.map((item) => (
                 // <Item key={item.id} />
                 <li key={item.id}>
-                  <a
+                  <Link
                     href={item.link}
                     className="inline-block hover:text-primary-normal px-4 duration-200"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
 
               <li className="group relative cursor-pointer">
-                <Link href="/#" className="flex items-center h-[72px] gap[2px]">
-                  Quick Links
+                {/* <p className="flex items-center h-[72px] gap[2px]">
+                  Translate to
                   <span>
                     <FaCaretDown className="transition duration-300 group-hover:rotate-180" />
                   </span>
-                </Link>
+                </p> */}
 
-                <div className="absolute -left-9 z-[10] hidden group-hover:block text-black bg-white p-2 shadow-md w-[150px]">
-                  <ul>
+                <div className=" text-white bg-my-black p-2 shadow-md ">
+                  {/* <ul>
                     {DropdownLinks.map((data) => (
-                      <li key={data.id}>
-                        <Link
-                          href={data.link}
+                      <li key={data.id} className="hover:bg-silver-very-dark">
+                        <p
+                          // href={data.link}
                           className="inline-block w-full rounded-md p-2 hover:bg-primary-normal/10"
                         >
                           {data.name}
-                        </Link>
+                        </p>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
+
+                  <select
+                    value={lang}
+                    onChange={(e) => setLang(e.target.value as any)}
+                    className=""
+                  >
+                    {languages.map((lang_) => (
+                      <option
+                        key={lang_.value}
+                        value={lang_.value}
+                        className="bg-silver-very-dark text-secondary"
+                      >
+                        {lang_.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </li>
+              <li>
+                <Link
+                  href="/cart"
+                  className="bg-gradient-to-r from-primary-normal to-secondary-normal text-white px-4 py-1 rounded-full flex items-center gap-3 hover:scale-105 duration-300"
+                >
+                  Cart
+                  <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+                </Link>
+              </li>
+              <li className="duration-300  cursor-pointer hover:scale-110 hover:*:text-white hover:*:border-silver-light">
+                {currentLoggedinUser ? (
+                  <div
+                    onClick={() => setCurrentLoggedinUser(null)}
+                    className="flex gap-1 p-2 outline-white"
+                  >
+                    {/* <FaPerson /> */}
+                    {/* <FaPersonBreastfeeding /> */}
+                    {/* <FaPerson className="w-7 h-7 text-secondary" />  */}
+                    Sign out
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => setShowLoginPopup(true)}
+                    className="flex gap-1 p-2 outline-white font-bold underline"
+                  >
+                    {/* <FaPerson /> */}
+                    {/* <FaPersonBreastfeeding /> */}
+                    {/* <FaPerson className="w-7 h-7 text-secondary" />  */}
+                    Login
+                  </div>
+                )}
+              </li>
+              <li className="relative cursor-pointer duration-300 hover:scale-110 hover:*:text-white hover:*:border-silver-light">
+                {currentLoggedinUser ? (
+                  <Link href={`/user-profile/${currentLoggedinUser.id}`}>
+                    <Image
+                      src={
+                        currentLoggedinUser.profileImage
+                          ? currentLoggedinUser.profileImage
+                          : defaultProfileImage
+                      }
+                      className="w-15 h-15 border-1 border-silver-dark rounded-full"
+                      alt="user-profile-img"
+                    />
+                    <p className="absolute top-10 -right-10 font-bold text-secondary-very-light p-1 rounded-xl bg-primary-dark hover:border-none">
+                      {currentLoggedinUser.name}
+                    </p>
+                  </Link>
+                ) : (
+                  <div
+                    onClick={() => setShowSignUpPopup(true)}
+                    className="flex gap-1 p-2 outline-white font-bold underline"
+                  >
+                    {/* <FaPerson /> */}
+                    {/* <FaPersonBreastfeeding /> */}
+                    {/* <FaPerson className="w-7 h-7 text-secondary" />  */}
+                    Sign Up
+                  </div>
+                )}
+              </li>
             </ul>
-            <button className="bg-gradient-to-r from-primary-normal to-secondary-normal text-white px-4 py-1 rounded-full flex items-center gap-3 hover:scale-105 duration-300">
-              Order
-              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
-            </button>
           </div>
         </div>
       </div>
     </nav>
   );
 };
-
-// const Item = ({ key }) => {
-//   return;
-//   <li key={key}></li>;
-// };
 
 export default NavBar;

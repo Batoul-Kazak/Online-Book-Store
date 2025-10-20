@@ -74,7 +74,7 @@ const Footer = () => {
                   {FooterLinks.map((link) => (
                     <li
                       key={link.link}
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-gray-500"
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-silver"
                     >
                       <span>&#11162;</span>
                       <span>{link.title}</span>
@@ -92,7 +92,7 @@ const Footer = () => {
                   {FooterLinks.map((link) => (
                     <li
                       key={link.link}
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-gray-500"
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-silver"
                     >
                       <span>&#11162;</span>
                       <span>{link.title}</span>
@@ -111,7 +111,7 @@ const Footer = () => {
                   {FooterLinks.map((link) => (
                     <li
                       key={link.link}
-                      className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-gray-500"
+                      className="cursor-pointer hover:translate-x-1 duration-300 hover:text-primary space-x-1 text-silver"
                     >
                       <span>&#11162;</span>
                       <span>{link.title}</span>
@@ -123,7 +123,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <div className="text-center py-10 border-t-2 border-gray-300/50">
+          <div className="text-center py-10 border-t-2 border-silver-light/50">
             @copyright 2024 All rights reserved || Made with ❤️ by Dilshad
           </div>
         </div>
