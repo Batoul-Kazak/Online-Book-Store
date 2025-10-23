@@ -13,25 +13,41 @@ import { useTranslation } from "@/app/context/TranslationContext";
 // import "../../globals.css";
 
 const Menu = [
-  // {
-  //   id: 2,
-  //   name: "Best Seller",
-  //   link: "/#services",
-  // },
   {
     id: 1,
-    name: "Free Books",
-    link: "/books",
+    name: "Free books",
+    link: "/free-books",
   },
 
   {
     id: 2,
     name: "All books",
-    link: "/books",
+    link: "/all-books",
   },
   {
     id: 3,
-    name: "Notes",
+    name: "About Us",
+    link: "/about",
+  },
+  {
+    id: 4,
+    name: "Contact Us",
+    link: "/contact-us",
+  },
+  {
+    id: 5,
+    name: "Rate Us",
+    link: "rate-us",
+  },
+  {
+    id: 6,
+    name: "Get help?",
+    link: "get-help",
+  },
+
+  {
+    id: 7,
+    name: "Write Your notes",
     link: "/rich-text-editor",
   },
 ];
@@ -53,9 +69,9 @@ const NavBar = () => {
   const { t, lang, setLang } = useTranslation();
 
   return (
-    <nav className="shadow-lg bg-light-black dark:bg-my-black dark:text-white duration-200 ">
-      <div className="sm:p-48 p-16 py-3 sm:py-0">
-        <div className="flex justify-between items-center">
+    <nav className="shadow-lg bg-light-black dark:text-white duration-200 w-full">
+      <div className="sm:p-25 p-16 py-3 sm:py-0 bg-light-black w-full">
+        <div className="flex justify-between ">
           <div>
             <Link
               href="/"
@@ -66,14 +82,13 @@ const NavBar = () => {
             <p>Books</p>
           </div>
           <div className="flex items-center justify-between gap-4">
-            <DarkMode />
-            <ul className="flex gap-4 items-center hidden sm:flex">
+            <ul className="flex gap-4 items-center text-xl sm:flex">
               {Menu.map((item) => (
                 // <Item key={item.id} />
                 <li key={item.id}>
                   <Link
                     href={item.link}
-                    className="inline-block hover:text-primary-normal px-4 duration-200"
+                    className="inline-block text-silver-very-light px-4 hover:scale-105 duration-300 hover:text-white"
                   >
                     {item.name}
                   </Link>
@@ -178,6 +193,9 @@ const NavBar = () => {
                     Sign Up
                   </div>
                 )}
+              </li>
+              <li>
+                <DarkMode />
               </li>
             </ul>
           </div>

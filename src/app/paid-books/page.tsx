@@ -1,7 +1,8 @@
 import React from "react";
+import PaidBooks from "../components/PaidBooks/PaidBooks";
 
-const PaidBooks = () => {
-  return <div>Paid Books</div>;
+const PaidBooksPage = () => {
+  return <PaidBooks />;
 };
 
-export default PaidBooks;
+export default PaidBooksPage;

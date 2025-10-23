@@ -1,0 +1,93 @@
+{
+  "quick_description": {
+    "tag": "quick description",
+    "address": "Who we are and what we offer to our customers?",
+    "content": "We are an online library offering both free and paid books across multiple genres and languages. Our platform allows you to read, take personal notes, manage preferences, and even purchase physical or digital copies—all in one place."
+  },
+  "questions": {
+    "tag": "questions",
+    "address": "Top Frequent Questions users ask",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "How do I create an account?",
+        "answer": "Click 'Sign Up' in the top-right corner, fill in your email and password, and verify your account to get started."
+      },
+      {
+        "id": "q2",
+        "question": "Can I read books for free?",
+        "answer": "Yes! Visit the 'Free Books' section to access hundreds of books at no cost."
+      },
+      {
+        "id": "q3",
+        "question": "How do I add notes to a book?",
+        "answer": "Open any book, click 'Write Your Notes', and save your thoughts. They’ll be stored securely in your profile."
+      },
+      {
+        "id": "q4",
+        "question": "Do you deliver physical books?",
+        "answer": "Yes, select 'Physical Copy' at checkout and provide your shipping address. We ship worldwide!"
+      },
+      {
+        "id": "q5",
+        "question": "Can I sell my own books here?",
+        "answer": "We’re developing an author portal! Stay tuned for updates under the 'Sell Books' section."
+      },
+      {
+        "id": "q6",
+        "question": "How do I change the website language?",
+        "answer": "Use the language dropdown in the header to switch between English, German, Arabic, and Russian instantly."
+      }
+    ]
+  },
+  "buy_books": {
+    "tag": "buy books",
+    "address": "How can I buy a book?",
+    "content": "Browse our catalog, choose between digital (PDF/eBook) or physical copies, add to your cart, and complete your order. You can review or remove items before finalizing your purchase."
+  },
+  "search_filters": {
+    "tag": "search & filters",
+    "address": "How can search and filter operations save your time and effort?",
+    "content": "Use filters by category, language, price (free/paid), and format to quickly find exactly what you’re looking for without scrolling endlessly."
+  },
+  "sell_books": {
+    "tag": "sell books",
+    "address": "How can I sell my lectures/stories/books and get feedback?",
+    "content": "Authors can submit manuscripts through our upcoming 'Sell Books' portal. Readers will be able to leave ratings and written feedback to help you improve."
+  },
+  "free_books": {
+    "tag": "free books",
+    "address": "How can I find free versions of books I want?",
+    "content": "Go to the 'Free Books' section in the navigation menu, or use the 'Free Only' toggle in the main book listing to filter results instantly."
+  },
+  "delivery_to_your_home": {
+    "tag": "delivery to your home",
+    "address": "How to get physical copies of books?",
+    "content": "During checkout, select 'Physical Copy', choose the number of copies, and enter your delivery address. We handle printing and shipping globally."
+  },
+  "preferences": {
+    "tag": "preferences",
+    "address": "How can I manage my preferences?",
+    "content": "In your profile, go to Settings → Preferences to adjust theme (light/dark mode), notification settings, favorite categories, and default language."
+  },
+  "book_translation": {
+    "tag": "book translation",
+    "address": "Can I get books translated into my language?",
+    "content": "Yes! For select titles, we offer AI-assisted translations. When viewing a book, toggle 'Translated Copy' to read it in your preferred language—even if the original is in another language."
+  },
+  "e_books": {
+    "tag": "e-books",
+    "address": "What formats do your e-books support?",
+    "content": "Our digital books are available in PDF and EPUB formats. PDFs preserve layout perfectly, while EPUBs adapt to any screen size—ideal for mobile reading."
+  },
+  "online_reading": {
+    "tag": "online reading",
+    "address": "Can I read books directly in the browser?",
+    "content": "Absolutely! Click 'Read Online' on any book page to open an embedded reader. No downloads needed—just log in and start reading instantly from any device."
+  },
+  "notes": {
+    "tag": "notes",
+    "address": "How do my personal notes work?",
+    "content": "You can create titled notes linked to specific books. All notes are private, searchable, and synced to your account. Access them anytime from your profile under 'My Notes'."
+  }
+}

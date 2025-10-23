@@ -1,5 +1,15 @@
 import FreeBooks from "@/app/components/FreeBooks/FreeBooks";
+import NavBar from "../components/NavBar/NavBar";
+import Footer from "../components/Footer/Footer";
 
-export default function FreeBooksPage() {
-  return <FreeBooks />;
-}
+const FreeBooksPage = () => {
+  return (
+    <div>
+      <NavBar />
+      <FreeBooks />;
+      <Footer />
+    </div>
+  );
+};
+
+export default FreeBooksPage;

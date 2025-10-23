@@ -1,0 +1,93 @@
+{
+  "quick_description": {
+    "tag": "kurze Beschreibung",
+    "address": "Wer wir sind und was wir unseren Kunden bieten?",
+    "content": "Wir sind eine Online-Bibliothek, die kostenlose und kostenpflichtige Bücher in verschiedenen Genres und Sprachen anbietet. Unsere Plattform ermöglicht es Ihnen, zu lesen, persönliche Notizen zu erstellen, Einstellungen zu verwalten und physische oder digitale Exemplare zu kaufen – alles an einem Ort."
+  },
+  "questions": {
+    "tag": "Fragen",
+    "address": "Häufig gestellte Fragen der Nutzer",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Wie erstelle ich ein Konto?",
+        "answer": "Klicken Sie oben rechts auf „Registrieren“, geben Sie Ihre E-Mail und Ihr Passwort ein und bestätigen Sie Ihr Konto."
+      },
+      {
+        "id": "q2",
+        "question": "Kann ich Bücher kostenlos lesen?",
+        "answer": "Ja! Besuchen Sie den Bereich „Kostenlose Bücher“, um Hunderte von Büchern ohne Kosten zu nutzen."
+      },
+      {
+        "id": "q3",
+        "question": "Wie füge ich Notizen zu einem Buch hinzu?",
+        "answer": "Öffnen Sie ein Buch, klicken Sie auf „Notizen schreiben“ und speichern Sie Ihre Gedanken. Sie werden sicher in Ihrem Profil gespeichert."
+      },
+      {
+        "id": "q4",
+        "question": "Liefern Sie physische Bücher?",
+        "answer": "Ja, wählen Sie beim Checkout „Physisches Exemplar“ und geben Sie Ihre Versandadresse an. Wir versenden weltweit!"
+      },
+      {
+        "id": "q5",
+        "question": "Kann ich meine eigenen Bücher hier verkaufen?",
+        "answer": "Wir entwickeln ein Autorenportal! Bleiben Sie auf dem Laufenden unter „Bücher verkaufen“."
+      },
+      {
+        "id": "q6",
+        "question": "Wie ändere ich die Sprache der Website?",
+        "answer": "Verwenden Sie das Sprachmenü in der Kopfzeile, um sofort zwischen Englisch, Deutsch, Arabisch und Russisch zu wechseln."
+      }
+    ]
+  },
+  "buy_books": {
+    "tag": "Bücher kaufen",
+    "address": "Wie kann ich ein Buch kaufen?",
+    "content": "Durchsuchen Sie unseren Katalog, wählen Sie zwischen digitalen (PDF/eBook) oder physischen Exemplaren, fügen Sie sie in den Warenkorb und schließen Sie Ihre Bestellung ab. Sie können Artikel vor Abschluss prüfen oder entfernen."
+  },
+  "search_filters": {
+    "tag": "Suche & Filter",
+    "address": "Wie sparen Suche und Filter Zeit und Aufwand?",
+    "content": "Nutzen Sie Filter nach Kategorie, Sprache, Preis (kostenlos/kostenpflichtig) und Format, um schnell das Richtige zu finden – ohne endloses Scrollen."
+  },
+  "sell_books": {
+    "tag": "Bücher verkaufen",
+    "address": "Wie kann ich meine Vorlesungen/Geschichten/Bücher verkaufen und Feedback erhalten?",
+    "content": "Autoren können Manuskripte über unser zukünftiges „Bücher verkaufen“-Portal einreichen. Leser können Bewertungen und schriftliches Feedback hinterlassen."
+  },
+  "free_books": {
+    "tag": "Kostenlose Bücher",
+    "address": "Wie finde ich kostenlose Versionen der Bücher, die ich möchte?",
+    "content": "Gehen Sie im Menü zum Bereich „Kostenlose Bücher“ oder verwenden Sie den „Nur kostenlose“-Filter in der Hauptbuchliste."
+  },
+  "delivery_to_your_home": {
+    "tag": "Lieferung zu Ihnen nach Hause",
+    "address": "Wie erhalte ich physische Exemplare von Büchern?",
+    "content": "Wählen Sie beim Checkout „Physisches Exemplar“, geben Sie die Anzahl an und tragen Sie Ihre Lieferadresse ein. Wir übernehmen Druck und Versand weltweit."
+  },
+  "preferences": {
+    "tag": "Einstellungen",
+    "address": "Wie verwalte ich meine Einstellungen?",
+    "content": "Gehen Sie in Ihrem Profil zu Einstellungen → Präferenzen, um Design (Hell/Dunkel), Benachrichtigungen, Lieblingskategorien und Standardsprache anzupassen."
+  },
+  "book_translation": {
+    "tag": "Buchübersetzung",
+    "address": "Kann ich Bücher in meine Sprache übersetzt bekommen?",
+    "content": "Ja! Für ausgewählte Titel bieten wir KI-unterstützte Übersetzungen an. Aktivieren Sie beim Ansehen eines Buches „Übersetzte Kopie“, um es in Ihrer bevorzugten Sprache zu lesen – auch wenn das Original in einer anderen Sprache verfasst ist."
+  },
+  "e_books": {
+    "tag": "E-Books",
+    "address": "Welche Formate unterstützen Ihre E-Books?",
+    "content": "Unsere digitalen Bücher sind im PDF- und EPUB-Format erhältlich. PDFs bewahren das Layout perfekt, während EPUBs sich an jede Bildschirmgröße anpassen – ideal zum Lesen auf Mobilgeräten."
+  },
+  "online_reading": {
+    "tag": "Online-Lesen",
+    "address": "Kann ich Bücher direkt im Browser lesen?",
+    "content": "Auf jeden Fall! Klicken Sie auf „Online lesen“, um einen integrierten Reader zu öffnen. Kein Download nötig – einfach anmelden und sofort loslesen, von jedem Gerät aus."
+  },
+  "notes": {
+    "tag": "Notizen",
+    "address": "Wie funktionieren meine persönlichen Notizen?",
+    "content": "Sie können benannte Notizen erstellen, die mit bestimmten Büchern verknüpft sind. Alle Notizen sind privat, durchsuchbar und mit Ihrem Konto synchronisiert. Greifen Sie jederzeit über Ihr Profil auf „Meine Notizen“ zu."
+  }
+}

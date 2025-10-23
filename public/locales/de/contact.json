@@ -1,0 +1,39 @@
+    {
+  "pageTitle": "Kontaktieren Sie uns",
+  "hero": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Ob Sie Leser, Autor oder einfach neugierig sind – wir sind für Sie da."
+  },
+  "cards": {
+    "general": {
+      "title": "Allgemeine Anfragen",
+      "description": "Konto-Probleme, Bestellungen, Rückerstattungen und allgemeine Fragen.",
+      "email": "support@yourbookstore.com",
+      "buttonText": "Support kontaktieren"
+    },
+    "authors": {
+      "title": "Autoren & Verlage",
+      "description": "Reichen Sie Ihr Buch ein, besprechen Sie Veröffentlichungen oder erkunden Sie Partnerschaften.",
+      "email": "publishing@yourbookstore.com",
+      "buttonText": "Buch einreichen"
+    },
+    "technical": {
+      "title": "Technischer Support",
+      "description": "Website-Fehler, Login-Probleme oder Feature-Wünsche.",
+      "email": "tech@yourbookstore.com",
+      "buttonText": "Problem melden"
+    },
+    "business": {
+      "title": "Geschäftliches & Presse",
+      "description": "Medienanfragen, Kooperationen oder Feedback.",
+      "email": "hello@yourbookstore.com",
+      "buttonText": "Kontaktieren Sie uns"
+    }
+  },
+  "faqSection": {
+    "note": "Bevor Sie uns kontaktieren, besuchen Sie unser",
+    "linkText": "Hilfe-Center",
+    "linkUrl": "/get-help"
+  },
+  "personalNote": "Diese Bibliothek wurde von Lesern für Leser gebaut. Jede Nachricht hilft uns, das Erlebnis zu verbessern. — Das Books-Team"
+}

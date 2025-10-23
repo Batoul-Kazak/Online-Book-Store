@@ -72,7 +72,7 @@ const AddToCartPopup = () => {
       <form
         action="post"
         onSubmit={handleAddToCart}
-        className="max-h-[40rem] overflow-y-scroll p-10 flex max-w-[40rem] gap-10 flex-col border-2 border-double pt-20 rounded-2xl bg-gradient-to-br from-silver-very-dark to-my-black text-white fixed z-20 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+        className="max-h-[40rem] overflow-y-scroll p-10 flex max-w-[40rem] gap-10 flex-col border-2 border-double pt-20 rounded-2xl bg-gradient-to-br from-silver-very-dark to-my-black text-white fixed z-40 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
         <FaWindowClose
           onClick={() => setShowAddToCartPopup(false)}

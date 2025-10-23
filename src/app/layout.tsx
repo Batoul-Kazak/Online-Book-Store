@@ -53,8 +53,15 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </Head> */}
-      <body className={`bg-light-black ${inter.variable}`}>
-        <ThemeProvider attribute="class">
+      <body
+        className={`bg-silver-very-light dark:bg-light-black text-dark-black dark:text-silver-very-light ${inter.variable}`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <AppProvider>
             <TranslationProvider>{children}</TranslationProvider>
           </AppProvider>

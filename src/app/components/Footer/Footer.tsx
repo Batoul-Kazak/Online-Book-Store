@@ -31,7 +31,7 @@ const FooterLinks = [
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 dark:bg-gray-950">
+    <div className="bg-gray-100 dark:bg-gray-950 w-full">
       <section className="container">
         <div className=" grid md:grid-cols-3 py-5">
           <div className=" py-8 px-4 ">

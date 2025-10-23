@@ -13,10 +13,10 @@ import book12 from "@/app/assets/books/computer science/Java Network Programming
 import book13 from "@/app/assets/books/computer science/machine_learning_step_by_step_guide.png";
 import book14 from "@/app/assets/books/computer science/computer_architecture.png";
 
-import book15 from "@/app/assets/books/computer science/computer_architecture.png";
-import book16 from "@/app/assets/books/computer science/computer_architecture.png";
-import book17 from "@/app/assets/books/computer science/computer_architecture.png";
-import book18 from "@/app/assets/books/computer science/computer_architecture.png";
+import book15 from "@/app/assets/books/computer science/introduction to algorithms cover.png";
+import book16 from "@/app/assets/books/Stories/karamaza brothers cover.png";
+import book17 from "@/app/assets/books/math/linear algebra done right.png";
+import book18 from "@/app/assets/books/Stories/Anna Karina Cover.png";
 
 import profileImg1 from "@/app/assets/website/dolphine.png";
 import profileImg2 from "@/app/assets/website/horse.jpeg";
@@ -38,7 +38,7 @@ export const allBooks = [
     edition: "first edition",
     author: "Anonymous",
     language: "english",
-    rating: 4.8,
+    rating: 3.8,
     price: 18,
     downloadURL: "/books/who-is-there.pdf",
     description:
@@ -49,7 +49,7 @@ export const allBooks = [
   {
     id: "book_2",
     img: book2,
-    title: "book2",
+    title: "His life will be forever change",
     type: "story",
     age: ">12",
     edition: "first edition",
@@ -312,7 +312,7 @@ export const allBooks = [
     edition: "third edition",
     author: "Sheldon Axler",
     language: "english",
-    rating: 4.8,
+    rating: 4.4,
     price: 0,
     downloadURL: "/books/linear-algebra-done-right.pdf",
     description:
@@ -457,7 +457,7 @@ export const mockUsers: User[] = [
     email: "bob@example.com",
     password: "securepass",
     name: "Bob Smith",
-    profileImage: "https://i.pravatar.cc/150?img=2",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-02-10",
     preferences: {
@@ -485,7 +485,7 @@ export const mockUsers: User[] = [
     email: "carol@example.com",
     password: "carol123",
     name: "Carol Davis",
-    profileImage: "https://i.pravatar.cc/150?img=3",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-03-05",
     preferences: {
@@ -513,7 +513,7 @@ export const mockUsers: User[] = [
     email: "dave@example.com",
     password: "davepass",
     name: "Dave Wilson",
-    profileImage: "https://i.pravatar.cc/150?img=4",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-03-20",
     preferences: {
@@ -541,7 +541,7 @@ export const mockUsers: User[] = [
     email: "eve@example.com",
     password: "eve12345",
     name: "Eve Brown",
-    profileImage: "https://i.pravatar.cc/150?img=5",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-04-01",
     preferences: {
@@ -569,7 +569,7 @@ export const mockUsers: User[] = [
     email: "frank@example.com",
     password: "frankpass",
     name: "Frank Miller",
-    profileImage: "https://i.pravatar.cc/150?img=6",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-04-10",
     preferences: {
@@ -597,7 +597,7 @@ export const mockUsers: User[] = [
     email: "grace@example.com",
     password: "grace123",
     name: "Grace Lee",
-    profileImage: "https://i.pravatar.cc/150?img=7",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-05-01",
     preferences: {
@@ -625,7 +625,7 @@ export const mockUsers: User[] = [
     email: "henry@example.com",
     password: "henrypass",
     name: "Henry Taylor",
-    profileImage: "https://i.pravatar.cc/150?img=8",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-05-15",
     preferences: {
@@ -653,7 +653,7 @@ export const mockUsers: User[] = [
     email: "admin@example.com",
     password: "admin123",
     name: "Admin User",
-    profileImage: "https://i.pravatar.cc/150?img=9",
+    profileImage: profileImg3,
     role: "admin",
     createdAt: "2023-12-01",
     preferences: {
@@ -681,7 +681,7 @@ export const mockUsers: User[] = [
     email: "zoe@example.com",
     password: "zoepass",
     name: "Zoe Clark",
-    profileImage: "https://i.pravatar.cc/150?img=10",
+    profileImage: profileImg2,
     role: "user",
     createdAt: "2024-06-01",
     preferences: {

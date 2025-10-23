@@ -85,7 +85,7 @@ const CategoryBar = ({ onCategorySelect }: CategoryBarProps) => {
           <button
             key={item}
             onClick={() => onCategorySelect(item)}
-            className="flex-shrink-0 font-bold px-5 py-2 hover:opacity-60 hover:scale-95 text-white bg-gradient-to-br from-primary to-secondary rounded-full whitespace-nowrap duration-300 transition-colors shadow-md"
+            className="flex-shrink-0 font-bold px-5 py-2 hover:opacity-60 hover:scale-95 text-white bg-secondary rounded-full whitespace-nowrap duration-300 transition-colors shadow-md"
           >
             {item.charAt(0).toUpperCase() + item.slice(1)}
           </button>

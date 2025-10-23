@@ -1,22 +1,24 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import book7 from "@/app/assets/books/math/calculus.png";
 import vector from "@/app/assets/website/blue-pattern.png";
 import { allBooks } from "@/app/lib/index";
 import Image from "next/image";
 import { useTranslation } from "@/app/context/TranslationContext";
+import { AppContext } from "@/app/context/AppContext";
 
 const HeroSection = () => {
   const { t, lang, setLang } = useTranslation();
+  const { setShowAddToCartPopup, showAddToCartPopup } = useContext(AppContext);
 
   const booksToDisplay = allBooks.filter(
     (book) =>
-      book.id === "book_12" || book.id === "book_13" || book.id === "book_14"
+      book.id === "book_3" || book.id === "book_13" || book.id === "book_14"
   );
-  const [imageId, setImageId] = useState(booksToDisplay[0].img);
-  const [author, setAuthor] = useState(booksToDisplay[0].author);
-  const [title, setTitle] = useState(booksToDisplay[0].title);
-  const [description, setDescription] = useState(booksToDisplay[0].description);
+  const [imageId, setImageId] = useState(booksToDisplay[2].img);
+  const [author, setAuthor] = useState(booksToDisplay[2].author);
+  const [title, setTitle] = useState(booksToDisplay[2].title);
+  const [description, setDescription] = useState(booksToDisplay[2].description);
 
   const bgImage = {
     backgroundImage: `url(${vector.src})`,
@@ -60,7 +62,7 @@ const HeroSection = () => {
               </p>
               <div>
                 <button
-                  // onClick={handleOrderPopup}
+                  onClick={() => setShowAddToCartPopup(true)}
                   className="bg-secondary text-2xl font-bold hover:scale-105 duration-200 text-white p-5 rounded-full"
                 >
                   Order

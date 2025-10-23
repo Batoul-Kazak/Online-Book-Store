@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "@/app/context/AppContext";
 import Image from "next/image";
-import { FaDeleteLeft } from "react-icons/fa6";
+import { FaArrowLeft, FaDeleteLeft } from "react-icons/fa6";
 import Link from "next/link";
-import NavBar from "../NavBar/NavBar";
+import NavBar from "@/app/components/NavBar/NavBar";
 import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 
 const CartPage = () => {
@@ -49,6 +51,20 @@ const CartPage = () => {
     console.log("cart " + JSON.stringify(currentUserCurrentCart));
   });
 
+  if (!currentLoggedinUser)
+    return (
+      <div className="font-bold absolute flex flex-col gap-10 place-content-center place-items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-4xl text-primary">
+        <p> Please login and try again</p>
+        <Link
+          href="/"
+          className="text-2xl flex gap-3 place-content-center place-items-center font-light py-3 px-5 bg-gradient-to-r from-primary to-primary-dark text-dark-black rounded-2xl"
+        >
+          <FaArrowLeft className="font-bold" />
+          Go Back
+        </Link>
+      </div>
+    );
+
   if (currentUserCurrentCart.length == 0) {
     return (
       <div className="flex flex-col gap-25">
@@ -59,7 +75,7 @@ const CartPage = () => {
             explore our books
           </p>
           <button className="text-xl bg-gradient-to-r from-secondary-dark to-secondary font-bold text-white py-3 px-5 rounded-2xl">
-            <Link href="/books">Explore Books</Link>
+            <Link href="/all-books">Explore Books</Link>
           </button>
         </div>
       </div>
@@ -79,7 +95,7 @@ const CartPage = () => {
       <NavBar />
       <div className="text-center bg-my-black px-20 text-white flex flex-col gap-5 place-content-center place-items-center pb-10">
         <h1 className="w-full text-5xl rounded-bl-4xl rounded-br-4xl bg-secondary-dark text-white py-10">
-          {currentLoggedinUser.name}'s Cart
+          {currentLoggedinUser.name} Cart
         </h1>
         <table className="p-10 flex flex-col place-content-center place-items-center w-full">
           {/* <caption className="text-xl font-black pb-15 text-silver-very-dark"> */}
