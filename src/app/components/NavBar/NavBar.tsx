@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Logo from "@/app/assets/website/logo.png";
 import Image from "next/image";
 import defaultProfileImage from "@/app/assets/website/defaultProfileImage.png";
@@ -70,11 +70,15 @@ const NavBar = () => {
   } = useContext(AppContext); //
   const { t, lang, setLang } = useTranslation();
 
+  useEffect(function () {
+    console.log(lang);
+  }, []);
+
   return (
     <nav className="shadow-lg bg-light-black dark:text-white duration-200 w-full">
       {/* <TestColors /> */}
       {/* <h1 className="text=4xl bg-primary">Heeeel</h1> */}
-      <div className="sm:p-25 p-16 py-3 sm:py-0 bg-sil dark:bg-black w-full">
+      <div className="sm:p-25 p-16 py-3 sm:py-0 dark:bg-[#0065ab] bg-white w-full">
         <div className="flex justify-between ">
           <div>
             <Link
@@ -107,24 +111,11 @@ const NavBar = () => {
                   </span>
                 </p> */}
 
-                <div className=" text-white bg-my-black p-2 shadow-md ">
-                  {/* <ul>
-                    {DropdownLinks.map((data) => (
-                      <li key={data.id} className="hover:bg-silver-very-dark">
-                        <p
-                          // href={data.link}
-                          className="inline-block w-full rounded-md p-2 hover:bg-primary-normal/10"
-                        >
-                          {data.name}
-                        </p>
-                      </li>
-                    ))}
-                  </ul> */}
-
+                <div className=" text-white  p-2 shadow-md ">
                   <select
                     value={lang}
                     onChange={(e) => setLang(e.target.value as any)}
-                    className=""
+                    className="bg-[#0065ab]"
                   >
                     {languages.map((lang_) => (
                       <option

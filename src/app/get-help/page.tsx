@@ -117,6 +117,7 @@ import QuickAccessBar from "../components/QuickAccessBar/QuickAccessBar";
 import backgroundImg from "@/app/assets/website/background2.jpg";
 import heroSectionImg from "@/app/assets/website/big_background.jpg";
 import Footer from "../components/Footer/Footer";
+import { useTranslation } from "../context/TranslationContext";
 
 const getHelpQuickLinks = [
   {
@@ -223,6 +224,8 @@ const getHelpQuickLinks = [
 ];
 
 const GetHelp = () => {
+  const { t, lang, setLang } = useTranslation();
+
   return (
     <div className="flex flex-col place-content-center place-items-center gap-15 w-full ">
       <div className="w-full">
@@ -245,7 +248,8 @@ const GetHelp = () => {
                 <div className="w-full px-10 h-1 bg-light-black"></div>
               </div>
               <h2 className="text-5xl font-serif font-bold text-secondary">
-                {link?.address}
+                {/* {link?.address} */}
+                {t("help.quick_description.address")}
               </h2>
               {link?.content ? (
                 <div
@@ -260,7 +264,8 @@ const GetHelp = () => {
                       link.image ? "text-2xl font-roboto" : "text-2xl"
                     }`}
                   >
-                    {link.content}
+                    {/* {link.content} */}
+                    {t("help.quick_description.content")}
                   </p>
                   {link?.image && (
                     <Image
@@ -272,10 +277,10 @@ const GetHelp = () => {
                 </div>
               ) : link?.questions ? (
                 <ul className="">
-                  {link.questions.map((question) => (
+                  {link.questions.map((question, i) => (
                     <li key={question.id} className="flex flex-col">
-                      <h3>{question.question}</h3>
-                      <p>{question.answer}</p>
+                      {/* <h3>{t("help.questions.questions")[i].address}</h3> */}
+                      <p>{t("help.questions.questions.answer")}</p>
                     </li>
                   ))}
                 </ul>

@@ -1,4 +1,44 @@
 {
+    "contact": {
+  "pageTitle": "Contact Us",
+  "hero": {
+    "title": "Get in Touch",
+    "subtitle": "Whether you're a reader, author, or just curious — we're here to help."
+  },
+  "cards": {
+    "general": {
+      "title": "General Inquiries",
+      "description": "Account issues, orders, refunds, and general questions.",
+      "email": "support@yourbookstore.com",
+      "buttonText": "Email Support"
+    },
+    "authors": {
+      "title": "Authors & Publishers",
+      "description": "Submit your book, discuss publishing, or explore partnerships.",
+      "email": "publishing@yourbookstore.com",
+      "buttonText": "Submit a Book"
+    },
+    "technical": {
+      "title": "Technical Support",
+      "description": "Website bugs, login issues, or feature requests.",
+      "email": "tech@yourbookstore.com",
+      "buttonText": "Report an Issue"
+    },
+    "business": {
+      "title": "Business & Press",
+      "description": "Media inquiries, collaborations, or feedback.",
+      "email": "hello@yourbookstore.com",
+      "buttonText": "Contact Us"
+    }
+  },
+  "faqSection": {
+    "note": "Before you contact us, check our",
+    "linkText": "Help Center",
+    "linkUrl": "/get-help"
+  },
+  "personalNote": "This library was built by readers, for readers. Every message helps us make the experience better. — The Books Team"
+},
+"help":{
   "quick_description": {
     "tag": "quick description",
     "address": "Who we are and what we offer to our customers?",
@@ -90,4 +130,5 @@
     "address": "How do my personal notes work?",
     "content": "You can create titled notes linked to specific books. All notes are private, searchable, and synced to your account. Access them anytime from your profile under 'My Notes'."
   }
+}
 }

@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { AppProvider } from "./context/AppContext";
 import Head from "next/head";
 import Link from "next/link";
+import { Providers } from "./providers";
 // import { Open_Sans } from "next/font/google";
 
 // const openSans = Open_Sans({
@@ -46,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {/* <Head>
         <Link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
@@ -56,16 +57,18 @@ export default function RootLayout({
       <body
         className={`bg-silver-very-light dark:bg-light-black text-dark-black dark:text-silver-very-light ${inter.variable}`}
       >
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
-          <AppProvider>
-            <TranslationProvider>{children}</TranslationProvider>
-          </AppProvider>
-        </ThemeProvider>
+          > */}
+        <AppProvider>
+          <TranslationProvider>
+            <Providers>{children}</Providers>
+          </TranslationProvider>
+        </AppProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
