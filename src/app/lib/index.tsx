@@ -28,6 +28,46 @@ import profileImg7 from "@/app/assets/website/thumbnail (16).jpg";
 import profileImg8 from "@/app/assets/website/thumbnail (17).jpg";
 import profileImg9 from "@/app/assets/website/thumbnail (18).jpg";
 
+export const appLinks = [
+  {
+    id: 1,
+    name: "Free books",
+    link: "/free-books",
+  },
+
+  {
+    id: 2,
+    name: "All books",
+    link: "/all-books",
+  },
+  {
+    id: 3,
+    name: "About Us",
+    link: "/about",
+  },
+  {
+    id: 4,
+    name: "Contact Us",
+    link: "/contact-us",
+  },
+  {
+    id: 5,
+    name: "Rate Us",
+    link: "rate-us",
+  },
+  {
+    id: 6,
+    name: "Get help?",
+    link: "get-help",
+  },
+
+  {
+    id: 7,
+    name: "Write Your notes",
+    link: "/rich-text-editor",
+  },
+];
+
 export const allBooks = [
   {
     id: "book_1",

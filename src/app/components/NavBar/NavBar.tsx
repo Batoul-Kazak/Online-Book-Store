@@ -10,9 +10,11 @@ import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
 import { AppContext } from "@/app/context/AppContext";
 import { useTranslation } from "@/app/context/TranslationContext";
+import TestColors from "../TestColors";
 // import "../../globals.css";
+// import appLinks from "@/app/lib/index";
 
-const Menu = [
+export const appLinks = [
   {
     id: 1,
     name: "Free books",
@@ -65,12 +67,14 @@ const NavBar = () => {
     setShowSignUpPopup,
     setCurrentLoggedinUser,
     setShowLoginPopup,
-  } = useContext(AppContext);
+  } = useContext(AppContext); //
   const { t, lang, setLang } = useTranslation();
 
   return (
     <nav className="shadow-lg bg-light-black dark:text-white duration-200 w-full">
-      <div className="sm:p-25 p-16 py-3 sm:py-0 bg-light-black w-full">
+      {/* <TestColors /> */}
+      {/* <h1 className="text=4xl bg-primary">Heeeel</h1> */}
+      <div className="sm:p-25 p-16 py-3 sm:py-0 bg-sil dark:bg-black w-full">
         <div className="flex justify-between ">
           <div>
             <Link
@@ -83,7 +87,7 @@ const NavBar = () => {
           </div>
           <div className="flex items-center justify-between gap-4">
             <ul className="flex gap-4 items-center text-xl sm:flex">
-              {Menu.map((item) => (
+              {appLinks.map((item) => (
                 // <Item key={item.id} />
                 <li key={item.id}>
                   <Link

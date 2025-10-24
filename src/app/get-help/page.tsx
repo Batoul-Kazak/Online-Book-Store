@@ -239,7 +239,7 @@ const GetHelp = () => {
       />
       <main className="flex flex-col  px-30 py-10">
         {getHelpQuickLinks.map((link) => (
-          <div id={link?.tag} key={link?.tag} className="">
+          <div id={`${link?.tag}`} key={link?.tag} className="">
             <section className="flex flex-col gap-20">
               <div className="w-full h-[10rem] flex place-content-center p-10">
                 <div className="w-full px-10 h-1 bg-light-black"></div>
@@ -257,7 +257,7 @@ const GetHelp = () => {
                 >
                   <p
                     className={`${
-                      link.image ? "text-2xl font-light" : "text-2xl"
+                      link.image ? "text-2xl font-roboto" : "text-2xl"
                     }`}
                   >
                     {link.content}
