@@ -3,56 +3,13 @@ import React, { useContext, useEffect } from "react";
 import Logo from "@/app/assets/website/logo.png";
 import Image from "next/image";
 import defaultProfileImage from "@/app/assets/website/defaultProfileImage.png";
-import { it } from "node:test";
 
 import { FaCartShopping } from "react-icons/fa6";
 import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
 import { AppContext } from "@/app/context/AppContext";
 import { useTranslation } from "@/app/context/TranslationContext";
-import TestColors from "../TestColors";
-// import "../../globals.css";
-// import appLinks from "@/app/lib/index";
-
-export const appLinks = [
-  {
-    id: 1,
-    name: "Free books",
-    link: "/free-books",
-  },
-
-  {
-    id: 2,
-    name: "All books",
-    link: "/all-books",
-  },
-  {
-    id: 3,
-    name: "About Us",
-    link: "/about",
-  },
-  {
-    id: 4,
-    name: "Contact Us",
-    link: "/contact-us",
-  },
-  {
-    id: 5,
-    name: "Rate Us",
-    link: "rate-us",
-  },
-  {
-    id: 6,
-    name: "Get help?",
-    link: "get-help",
-  },
-
-  {
-    id: 7,
-    name: "Write Your notes",
-    link: "/rich-text-editor",
-  },
-];
+import { appLinks } from "@/app/lib/index";
 
 const languages = [
   { value: "en", name: "English" },
@@ -75,7 +32,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className="shadow-lg bg-light-black dark:text-white duration-200 w-full">
+    <nav className="shadow-lg fixed z-800 bg-light-black dark:text-white duration-200 w-full">
       {/* <TestColors /> */}
       {/* <h1 className="text=4xl bg-primary">Heeeel</h1> */}
       <div className="sm:p-25 p-16 py-3 sm:py-0 dark:bg-[#0065ab] bg-white w-full">
@@ -92,13 +49,12 @@ const NavBar = () => {
           <div className="flex items-center justify-between gap-4">
             <ul className="flex gap-4 items-center text-xl sm:flex">
               {appLinks.map((item) => (
-                // <Item key={item.id} />
                 <li key={item.id}>
                   <Link
                     href={item.link}
                     className="inline-block text-silver-very-light px-4 hover:scale-105 duration-300 hover:text-white"
                   >
-                    {item.name}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}

@@ -29,43 +29,13 @@ import profileImg8 from "@/app/assets/website/thumbnail (17).jpg";
 import profileImg9 from "@/app/assets/website/thumbnail (18).jpg";
 
 export const appLinks = [
-  {
-    id: 1,
-    name: "Free books",
-    link: "/free-books",
-  },
-
-  {
-    id: 2,
-    name: "All books",
-    link: "/all-books",
-  },
-  {
-    id: 3,
-    name: "About Us",
-    link: "/about",
-  },
-  {
-    id: 4,
-    name: "Contact Us",
-    link: "/contact-us",
-  },
-  {
-    id: 5,
-    name: "Rate Us",
-    link: "rate-us",
-  },
-  {
-    id: 6,
-    name: "Get help?",
-    link: "get-help",
-  },
-
-  {
-    id: 7,
-    name: "Write Your notes",
-    link: "/rich-text-editor",
-  },
+  { id: 1, key: "free_books", link: "/free-books" },
+  { id: 2, key: "all_books", link: "/all-books" },
+  { id: 3, key: "about_us", link: "/about" },
+  { id: 4, key: "contact_us", link: "/contact-us" },
+  { id: 5, key: "rate_us", link: "/rate-us" },
+  { id: 6, key: "get_help", link: "/get-help" },
+  { id: 7, key: "write_notes", link: "/rich-text-editor" },
 ];
 
 export const allBooks = [

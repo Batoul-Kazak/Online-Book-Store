@@ -130,5 +130,14 @@
     "address": "How do my personal notes work?",
     "content": "You can create titled notes linked to specific books. All notes are private, searchable, and synced to your account. Access them anytime from your profile under 'My Notes'."
   }
-}
+},
+  "nav": {
+    "free_books": "Free books",
+    "all_books": "All books",
+    "about_us": "About Us",
+    "contact_us": "Contact Us",
+    "rate_us": "Rate Us",
+    "get_help": "Get help?",
+    "write_notes": "Write Your notes"
+  }
 }

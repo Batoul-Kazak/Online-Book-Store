@@ -130,7 +130,9 @@ const CartPage = () => {
                 <div className="w-15"></div>
               </td>
               <td className="w-100 text-start">{item.title}</td>
-              <td className="w-20">{item.price}$</td>
+              <td className="w-20">
+                {item.price > 0 ? item.price + "$" : "free"}
+              </td>
               {item.isPDF ? (
                 <td className="w-30">PDF</td>
               ) : (

@@ -7,6 +7,7 @@ import Image from "next/image";
 import { allBooks } from "@/app/lib";
 import Link from "next/link";
 import { Select } from "@mui/material";
+import NotFound from "@/app/not-found";
 
 const UserProfile = () => {
   const { currentLoggedinUser, setCurrentLoggedinUser } =
@@ -65,7 +66,8 @@ const UserProfile = () => {
     return [...new Set(allBookNames)];
   }
 
-  //   return <div>{currentLoggedinUser.name}</div>;
+  if (!currentLoggedinUser) return <NotFound />;
+
   return (
     <div>
       <NavBar />
@@ -108,80 +110,92 @@ const UserProfile = () => {
                 <h2 className="text-3xl bg-silver-very-dark/50 p-5 pl-10">
                   My Notes
                 </h2>
-                <div className="bg-silver/50 p-3 pl-10 flex justify-between ">
-                  <p>filters:</p>
-                  <div className="flex gap-5">
-                    <section className="flex flex-col">
-                      <p className="place-self-center font-bold">About Tag</p>
-                      <select className="bg-transparent">
-                        {handleCombineTags().map((book) => (
-                          <option
-                            key={book}
-                            value={book}
-                            className="bg-silver-dark text-white"
-                          >
-                            {book}
-                          </option>
-                        ))}
-                      </select>
-                    </section>
-                    <section className="flex flex-col">
-                      <p className="place-self-center font-bold">About Book</p>
-                      <select className="bg-transparent">
-                        {handleCombineAboutBooks().map((book) => (
-                          <option
-                            key={book}
-                            value={book}
-                            className="bg-silver-dark text-white"
-                          >
-                            {book}
-                          </option>
-                        ))}
-                      </select>
-                    </section>
-                    <section className="flex flex-col">
-                      <p className="place-self-center font-bold">Title</p>
-                      <select className="bg-transparent">
-                        {currentLoggedinUser.notes.map((note) => (
-                          <option
-                            key={note.id}
-                            value={note.title}
-                            className="bg-silver-dark"
-                          >
-                            {note.title}
-                          </option>
-                        ))}
-                      </select>
-                    </section>
-                    <section className="flex flex-col">
-                      <p className="place-self-center font-bold">
-                        Creation Date
-                      </p>
-                      <select className="bg-transparent">
-                        {creationDatesSections.map((d) => (
-                          <option key={d} value={d} className="bg-silver-dark">
-                            {d.toLocaleUpperCase()}
-                          </option>
-                        ))}
-                      </select>
-                    </section>
-                  </div>
-                  {/* <div>title</div>
+                {currentLoggedinUser.notes.length > 0 && (
+                  <div className="bg-silver/50 p-3 pl-10 flex justify-between ">
+                    <p>filters:</p>
+                    <div className="flex gap-5">
+                      <section className="flex flex-col">
+                        <p className="place-self-center font-bold">About Tag</p>
+                        <select className="bg-transparent">
+                          {handleCombineTags().map((book) => (
+                            <option
+                              key={book}
+                              value={book}
+                              className="bg-silver-dark text-white"
+                            >
+                              {book}
+                            </option>
+                          ))}
+                        </select>
+                      </section>
+                      <section className="flex flex-col">
+                        <p className="place-self-center font-bold">
+                          About Book
+                        </p>
+                        <select className="bg-transparent">
+                          {handleCombineAboutBooks().map((book) => (
+                            <option
+                              key={book}
+                              value={book}
+                              className="bg-silver-dark text-white"
+                            >
+                              {book}
+                            </option>
+                          ))}
+                        </select>
+                      </section>
+                      <section className="flex flex-col">
+                        <p className="place-self-center font-bold">Title</p>
+                        <select className="bg-transparent">
+                          {currentLoggedinUser.notes.map((note) => (
+                            <option
+                              key={note.id}
+                              value={note.title}
+                              className="bg-silver-dark"
+                            >
+                              {note.title}
+                            </option>
+                          ))}
+                        </select>
+                      </section>
+                      <section className="flex flex-col">
+                        <p className="place-self-center font-bold">
+                          Creation Date
+                        </p>
+                        <select className="bg-transparent">
+                          {creationDatesSections.map((d) => (
+                            <option
+                              key={d}
+                              value={d}
+                              className="bg-silver-dark"
+                            >
+                              {d.toLocaleUpperCase()}
+                            </option>
+                          ))}
+                        </select>
+                      </section>
+                    </div>
+                    {/* <div>title</div>
                   <div>title</div>
                   <div>title</div> */}
+                  </div>
+                )}
+              </div>
+              {currentLoggedinUser.notes.length > 0 ? (
+                <div className="flex flex-wrap gap-5 px-10">
+                  {currentLoggedinUser.notes.map((note) => (
+                    <Link
+                      href={`/notes/${note.id}`}
+                      className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 py-3 px-5 hover:bg-secondary-dark/90 rounded-2xl text-light-silver text-xl"
+                      key={note.id}
+                    >
+                      <h3>{note.title}</h3>
+                    </Link>
+                  ))}
                 </div>
-              </div>
-              <div className="flex flex-wrap gap-5 px-10">
-                {currentLoggedinUser.notes.map((note) => (
-                  <Link
-                    href={`/notes/${note.id}`}
-                    className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 py-3 px-5 hover:bg-secondary-dark/90 rounded-2xl text-light-silver text-xl"
-                    key={note.id}
-                  >
-                    <h3>{note.title}</h3>
-                  </Link>
-                ))}
-              </div>
+              ) : (
+                <p className="text-secondary place-self-center">No Notes</p>
+              )}
             </div>
           </section>
           <section className="">
@@ -189,17 +203,21 @@ const UserProfile = () => {
               <h2 className="text-3xl bg-silver-very-dark/50 p-5 pl-10">
                 Current Reading Books
               </h2>
-              <div className="flex flex-wrap gap-5 px-10">
-                {currentLoggedinUser.currentReadings.map((bookID) => (
-                  <Link
-                    href={`/paid-books/${bookID}`}
-                    className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 py-3 px-5 hover:bg-secondary-dark/90 rounded-2xl text-light-silver text-xl"
-                    key={bookID}
-                  >
-                    {handleBookTitle(bookID)}
-                  </Link>
-                ))}
-              </div>
+              {currentLoggedinUser.currentReadings.length > 0 ? (
+                <div className="flex flex-wrap gap-5 px-10">
+                  {currentLoggedinUser.currentReadings.map((bookID) => (
+                    <Link
+                      href={`/paid-books/${bookID}`}
+                      className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 py-3 px-5 hover:bg-secondary-dark/90 rounded-2xl text-light-silver text-xl"
+                      key={bookID}
+                    >
+                      {handleBookTitle(bookID)}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-secondary place-self-center">No books</p>
+              )}
             </div>
           </section>
           <section className="">
@@ -207,17 +225,23 @@ const UserProfile = () => {
               <h2 className="text-3xl bg-silver-very-dark/50 p-5 pl-10">
                 Finished Reading Books
               </h2>
-              <div className="flex flex-wrap gap-5 px-10">
-                {currentLoggedinUser.readingHistory.map((bookID) => (
-                  <Link
-                    href={`/paid-books/${bookID}`}
-                    className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 py-3 px-5 hover:bg-secondary-dark/90 rounded-2xl text-light-silver text-xl"
-                    key={bookID}
-                  >
-                    {handleBookTitle(bookID)}
-                  </Link>
-                ))}
-              </div>
+              {currentLoggedinUser.readingHistory.length > 0 ? (
+                <div className="flex flex-wrap gap-5 px-10">
+                  {currentLoggedinUser.readingHistory.map((bookID) => (
+                    <Link
+                      href={`/paid-books/${bookID}`}
+                      className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 py-3 px-5 hover:bg-secondary-dark/90 rounded-2xl text-light-silver text-xl"
+                      key={bookID}
+                    >
+                      {handleBookTitle(bookID)}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-secondary place-self-center">
+                  No books read
+                </p>
+              )}
             </div>
           </section>
           <section className="">
@@ -225,17 +249,23 @@ const UserProfile = () => {
               <h2 className="text-3xl bg-silver-very-dark/50 p-5 pl-10">
                 Book Marked Books
               </h2>
-              <div className="flex flex-wrap gap-5 px-10">
-                {currentLoggedinUser.savedBooks.map((bookID) => (
-                  <Link
-                    href={`/paid-books/${bookID}`}
-                    className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 hover:bg-secondary-dark/90 py-3 px-5  rounded-2xl text-light-silver text-xl"
-                    key={bookID}
-                  >
-                    {handleBookTitle(bookID)}
-                  </Link>
-                ))}
-              </div>
+              {currentLoggedinUser.savedBooks.length > 0 ? (
+                <div className="flex flex-wrap gap-5 px-10">
+                  {currentLoggedinUser.savedBooks.map((bookID) => (
+                    <Link
+                      href={`/paid-books/${bookID}`}
+                      className="hover:scale-105 duration-300 cursor-pointer bg-secondary-dark/50 hover:bg-secondary-dark/90 py-3 px-5  rounded-2xl text-light-silver text-xl"
+                      key={bookID}
+                    >
+                      {handleBookTitle(bookID)}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <p className="place-self-center text-secondary">
+                  No saved books
+                </p>
+              )}
             </div>
           </section>
         </div>
