@@ -7,9 +7,9 @@ import defaultProfileImage from "@/app/assets/website/defaultProfileImage.png";
 import { FaCartShopping } from "react-icons/fa6";
 import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
-import { AppContext } from "@/app/context/AppContext";
-import { useTranslation } from "@/app/context/TranslationContext";
-import { appLinks } from "@/app/lib/index";
+import { AppContext } from "@/context/AppContext";
+import { useTranslation } from "@/context/TranslationContext";
+import { appLinks } from "@/lib/index";
 
 const languages = [
   { value: "en", name: "English" },

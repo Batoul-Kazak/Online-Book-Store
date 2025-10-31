@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import { testimonialData } from "@/app/lib/index";
+import { testimonialData } from "@/lib/index";
 
 const Testimonial = () => {
   const settings = {

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { Book } from "@/app/lib/types";
+import { Book } from "@/lib/types";
 
 type sortByType = "title" | "id";
 type selectedLanguageType = "en" | "ar" | "ru" | "de" | "all";

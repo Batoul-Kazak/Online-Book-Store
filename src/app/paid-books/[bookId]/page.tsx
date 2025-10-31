@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { allBooks } from "@/app/lib";
+import { allBooks } from "@/lib";
 import PaidBookDetails from "@/app/components/PaidBookDetails/PaidBookDetails";
 import BookDetailsPage from "@/app/components/BookDetailsPage/BookDetailsPage";
 

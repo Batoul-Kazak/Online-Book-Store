@@ -1,9 +1,9 @@
 "use client";
 
 import { FaEnvelope } from "react-icons/fa6";
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 import Link from "next/link";
-import Footer from "../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 
 const quickLinksArr = [
   "translators",

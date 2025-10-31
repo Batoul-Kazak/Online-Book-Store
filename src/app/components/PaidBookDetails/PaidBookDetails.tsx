@@ -4,10 +4,13 @@ import { FaStar } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
-import { allBooks } from "@/app/lib/index";
-import { AppContext } from "@/app/context/AppContext";
+import { allBooks } from "@/lib/index";
+import { AppContext } from "@/context/AppContext";
+import { useTranslation } from "@/context/TranslationContext";
 
 const PaidBookDetails = ({ toDisplayIn }: string) => {
+  const { lang } = useTranslation();
+
   const { setShowAddToCartPopup, setCurrentOrderedBookInfo } =
     useContext(AppContext);
   const booksToDisplay =
@@ -23,11 +26,10 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
 
   return (
     <div
-      className={`${
-        toDisplayIn === "homePage"
-          ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-[70rem]"
-          : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-[80%]"
-      } gap-4  md:gap-5 place-items-center place-self-center`}
+      className={`${toDisplayIn === "homePage"
+        ? "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-[70rem]"
+        : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-[80%]"
+        } gap-4  md:gap-5 place-items-center place-self-center`}
     >
       {booksToDisplay.map((book, i) => (
         <div key={book.id} className="pt-12 " data-aos="zoom-in">
@@ -37,8 +39,8 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
             <div className="flex justify-center place-items-center">
               <Image
                 src={book.img}
-                alt={book.title + book.id}
-                className="absolute -top-10 w-4/5 h-100 rounded-tl-2xl rounded-tr-2xl border-white/30 border-2"
+                alt={book.title["en"] + book.id}
+                className="absolute w-4/5 border-2 -top-10 h-100 rounded-tl-2xl rounded-tr-2xl border-white/30"
                 data-aos="slide-down"
                 data-aos-duration="1000"
                 data-aos-delay="100"
@@ -56,29 +58,27 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
                           className="relative flex flex-col text-red-500"
                           key={item}
                         >
-                          <FaStar className="text-yellow-600 w-6 h-6" />
-                          <FaStar className="text-yellow-500 w-4 h-4 absolute top-1 right-1" />
+                          <FaStar className="w-6 h-6 text-yellow-600" />
+                          <FaStar className="absolute w-4 h-4 text-yellow-500 top-1 right-1" />
                         </div>
                       ) : (
                         <div className="relative flex flex-col " key={item}>
-                          <FaStar className="text-silver w-6 h-6" />
-                          <FaStar className="text-silver w-4 h-4 absolute top-1 right-1" />
+                          <FaStar className="w-6 h-6 text-silver" />
+                          <FaStar className="absolute w-4 h-4 text-silver top-1 right-1" />
                         </div>
                       )
                     )} */}
                 {Array.from({ length: 5 }, (_, i) => {
                   const isFull = i + 1 <= Math.floor(book.rating);
                   return (
-                    <div key={i} className="flex flex-col relative">
+                    <div key={i} className="relative flex flex-col">
                       <FaStar
-                        className={`w-6 h-6 ${
-                          isFull ? "text-yellow-600" : "text-silver"
-                        }`}
+                        className={`w-6 h-6 ${isFull ? "text-yellow-600" : "text-silver"
+                          }`}
                       />
                       <FaStar
-                        className={`w-4 h-4 absolute top-1 right-1 ${
-                          isFull ? "text-yellow-500" : "text-silver"
-                        }`}
+                        className={`w-4 h-4 absolute top-1 right-1 ${isFull ? "text-yellow-500" : "text-silver"
+                          }`}
                       />
                     </div>
                   );
@@ -87,22 +87,22 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
             </div>
 
             <h1 className="text-3xl font-bold min-h-[5rem] text-primary">
-              {book.title}
+              {book.title[lang]}
             </h1>
-            <p className="line-clamp-4 text-left">{book.description}</p>
+            <p className="text-left line-clamp-4">{book.description[lang]}</p>
             <Link
               // href={`/book/${book.id}`}
               href={`/paid-books/${book.id}`}
-              className="underline cursor-pointer text-blue-200"
+              className="text-blue-200 underline cursor-pointer"
             >
               Show More Details
             </Link>
-            <button
-              onClick={() => handleOrderBook(book)}
-              className=" bg-gradient-to-r from-primary to-secondary w-full font-bold text-xl hover:scale-105 duration-200 text-white py-2 px-4 rounded-2xl"
+            <Link
+              href="/order-book"
+              className="w-full px-4 py-3 text-xl font-bold text-center text-white duration-200 bg-gradient-to-r from-primary-dark to-primary-light hover:scale-105 rounded-2xl"
             >
               Order Book
-            </button>
+            </Link>
           </div>
         </div>
       ))}

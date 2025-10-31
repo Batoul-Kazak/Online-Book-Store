@@ -278,11 +278,11 @@
 
 "use client";
 
-import { AppContext } from "@/app/context/AppContext";
+import { AppContext } from "@/context/AppContext";
 import { useContext, useState, useMemo } from "react";
 import NavBar from "../NavBar/NavBar";
 import Image from "next/image";
-import { allBooks } from "@/app/lib";
+import { allBooks } from "@/lib";
 import Link from "next/link";
 
 const UserProfile = () => {

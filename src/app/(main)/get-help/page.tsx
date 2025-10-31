@@ -112,12 +112,12 @@
 "use client";
 
 import Image from "next/image";
-import NavBar from "../components/NavBar/NavBar";
-import QuickAccessBar from "../components/QuickAccessBar/QuickAccessBar";
+import NavBar from "../../components/NavBar/NavBar";
+import QuickAccessBar from "../../components/QuickAccessBar/QuickAccessBar";
 import backgroundImg from "@/app/assets/website/background2.jpg";
 import heroSectionImg from "@/app/assets/website/big_background.jpg";
-import Footer from "../components/Footer/Footer";
-import { useTranslation } from "../context/TranslationContext";
+import Footer from "../../components/Footer/Footer";
+import { useTranslation } from "../../../context/TranslationContext";
 
 const getHelpQuickLinks = [
   {
@@ -253,16 +253,14 @@ const GetHelp = () => {
               </h2>
               {link?.content ? (
                 <div
-                  className={` ${
-                    link.image
-                      ? "flex gap-10 text-justify font-roboto px-15"
-                      : "flex-col "
-                  }`}
+                  className={` ${link.image
+                    ? "flex gap-10 text-justify font-roboto px-15"
+                    : "flex-col "
+                    }`}
                 >
                   <p
-                    className={`${
-                      link.image ? "text-2xl font-roboto" : "text-2xl"
-                    }`}
+                    className={`${link.image ? "text-2xl font-roboto" : "text-2xl"
+                      }`}
                   >
                     {/* {link.content} */}
                     {t("help.quick_description.content")}

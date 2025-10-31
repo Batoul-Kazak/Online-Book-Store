@@ -1,5 +1,5 @@
-import { AppContext } from "@/app/context/AppContext";
-import { mockUsers } from "@/app/lib";
+import { AppContext } from "@/context/AppContext";
+import { mockUsers } from "@/lib";
 import { useContext, useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
 

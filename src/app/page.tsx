@@ -19,15 +19,8 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import BookSearch from "./components/BookExplorer/BookSearch";
-import AddToCartPopup from "./components/AddToCartPopup/AddToCartPopup";
-import { allBooks, mockUsers } from "@/app/lib/index";
-import { AppContext } from "@/app/context/AppContext";
-import SignUpPopup from "./components/RegistrationPopup/SingUpPopup/SingUpPopup";
-import LoginPopup from "./components/RegistrationPopup/LoginPopup/LoginPopup";
 
 const Home = () => {
-  const { showAddToCartPopup, showSignUpPopup, showLoginPopup } =
-    useContext(AppContext);
 
   useEffect(() => {
     AOS.init({
@@ -41,20 +34,13 @@ const Home = () => {
 
   return (
     <div className="duration-200 bg-light-black dark:text-white">
-      {showAddToCartPopup && <AddToCartPopup />}
-      {showSignUpPopup && <SignUpPopup />}
-      {showLoginPopup && <LoginPopup />}
-      {/* <SignUpPopup /> */}
-      {/* <NavBar /> */}
       <HeroSection />
-
       <BookSearch />
       <BestBooks />
       <RecentBooks />
       <Banner />
       <AppStoreBanner />
       <Testimonial />
-      {/* <Footer /> */}
     </div>
   );
 };

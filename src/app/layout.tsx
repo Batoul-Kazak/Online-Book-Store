@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans, Roboto, Inter } from "next/font/google";
 import "./globals.css";
-import { TranslationProvider } from "./context/TranslationContext";
 import { ThemeProvider } from "next-themes";
-import { AppProvider } from "./context/AppContext";
+import { TranslationProvider } from "@/context/TranslationContext";
+import { AppProvider } from "@/context/AppContext";
+import { Providers } from "./providers";
 import Head from "next/head";
 import Link from "next/link";
-import { Providers } from "./providers";
 // import { Open_Sans } from "next/font/google";
 import NavBar from '@/app/components/NavBar/NavBar';
 import Footer from '@/app/components/Footer/Footer';
@@ -67,11 +67,11 @@ export default function RootLayout({
           > */}
         <AppProvider>
           <TranslationProvider>
-            <Providers>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <NavBar />
               {children}
               <Footer />
-              </Providers>
+            </ThemeProvider>
           </TranslationProvider>
         </AppProvider>
         {/* </ThemeProvider> */}

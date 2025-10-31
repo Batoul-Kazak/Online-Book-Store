@@ -2,10 +2,10 @@
 import React, { useContext, useState } from "react";
 import book7 from "@/app/assets/books/math/calculus.png";
 import vector from "@/app/assets/website/blue-pattern.png";
-import { allBooks } from "@/app/lib/index";
+import { allBooks } from "@/lib/index";
 import Image from "next/image";
-import { useTranslation } from "@/app/context/TranslationContext";
-import { AppContext } from "@/app/context/AppContext";
+import { useTranslation } from "@/context/TranslationContext";
+import { AppContext } from "@/context/AppContext";
 
 const HeroSection = () => {
   const { t, lang, setLang } = useTranslation();

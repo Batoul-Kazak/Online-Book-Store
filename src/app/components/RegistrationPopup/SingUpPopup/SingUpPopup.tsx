@@ -1,7 +1,7 @@
 "use client";
 
-import { AppContext } from "@/app/context/AppContext";
-import { mockUsers } from "@/app/lib";
+import { AppContext } from "@/context/AppContext";
+import { mockUsers } from "@/lib";
 import { spawn } from "child_process";
 import { profile } from "console";
 import { Span } from "next/dist/trace";

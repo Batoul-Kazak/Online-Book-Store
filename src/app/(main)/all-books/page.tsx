@@ -1,8 +1,8 @@
 import FreeBooks from "@/app/components/FreeBooks/FreeBooks";
-import PaidBooks from "../paid-books/page";
-import NavBar from "../components/NavBar/NavBar";
-import Footer from "../components/Footer/Footer";
-import PaidBookDetails from "../components/PaidBookDetails/PaidBookDetails";
+import PaidBooks from "../../paid-books/page";
+import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
+import PaidBookDetails from "../../components/PaidBookDetails/PaidBookDetails";
 
 const AllBooksPage = () => {
   return (

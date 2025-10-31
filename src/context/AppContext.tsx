@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useState, ReactNode, useEffect } from "react";
-import { mockUsers } from "@/app/lib/index";
+import { mockUsers } from "@/lib/index";
 
 export const AppContext = createContext({});
 

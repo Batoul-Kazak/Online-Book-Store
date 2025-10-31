@@ -1,7 +1,7 @@
 "use client";
 
 import backgroundImage from "@/app/assets/website/dark-image.jpg";
-import { AppContext } from "@/app/context/AppContext";
+import { AppContext } from "@/context/AppContext";
 import { useCallback, useContext, useRef, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 

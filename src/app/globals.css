@@ -1,7 +1,64 @@
 
 @import "tailwindcss";
 
+/* ===== LIGHT MODE (DEFAULT) ===== */
 :root {
+  /* Backgrounds: use LIGHT variants */
+  --bg-primary: var(--color-primary-very-light);    /* e.g., #b6e4ff */
+  --bg-primary-muted: var(--color-primary-light);   /* e.g., #75d0ff */
+  --bg-secondary: var(--color-secondary-very-light);/* e.g., #fbcfe3 */
+  --bg-secondary-muted: var(--color-secondary-light);/* e.g., #f8a9ca */
+  --bg-surface: #ffffff;                            /* pure white or light gray */
+  --bg-surface-muted: #f8f9fa;
+
+  /* Text: use DARK variants */
+  --text-primary: var(--color-primary-very-dark);   /* e.g., #00558d */
+  --text-primary-muted: var(--color-primary-dark);  /* e.g., #0065ab */
+  --text-secondary: var(--color-secondary-very-dark);/* e.g., #9c183d */
+  --text-secondary-muted: var(--color-secondary-dark);/* e.g., #bd1949 */
+  --text-body: var(--color-silver);                 /* e.g., #435061 */
+  --text-muted: var(--color-silver-light);          /* e.g., #677a90 */
+
+  /* Your original palette (keep for reference/component use) */
+  --color-primary-dark: #0065ab;
+  --color-primary: #1960d4;
+  --color-primary-very-dark: #00558d;
+  --color-primary-light: #75d0ff;
+  --color-primary-very-light: #b6e4ff;
+  --color-secondary: #eb4985;
+  --color-secondary-dark: #bd1949;
+  --color-secondary-very-dark: #9c183d;
+  --color-secondary-light: #f8a9ca;
+  --color-secondary-very-light: #fbcfe3;
+  --color-silver: #435061;
+  --color-silver-light: #677a90;
+  --color-silver-very-light: #b1bcc8;
+  --color-silver-dark: #3d4856;
+  --color-silver-very-dark: #343b46;
+  --color-light-black: #22272f;
+  --color-dark-black: #111418;
+}
+
+/* ===== DARK MODE ===== */
+.dark {
+  /* Backgrounds: use DARK variants */
+  --bg-primary: var(--color-primary-very-dark);     /* e.g., #00558d */
+  --bg-primary-muted: var(--color-primary-dark);    /* e.g., #0065ab */
+  --bg-secondary: var(--color-secondary-very-dark); /* e.g., #9c183d */
+  --bg-secondary-muted: var(--color-secondary-dark);/* e.g., #bd1949 */
+  --bg-surface: var(--color-dark-black);            /* #111418 */
+  --bg-surface-muted: var(--color-light-black);     /* #22272f */
+
+  /* Text: use LIGHT variants */
+  --text-primary: var(--color-primary-very-light);  /* e.g., #b6e4ff */
+  --text-primary-muted: var(--color-primary-light); /* e.g., #75d0ff */
+  --text-secondary: var(--color-secondary-very-light);/* e.g., #fbcfe3 */
+  --text-secondary-muted: var(--color-secondary-light);/* e.g., #f8a9ca */
+  --text-body: var(--color-silver-very-light);      /* e.g., #b1bcc8 */
+  --text-muted: var(--color-silver-light);          /* e.g., #677a90 */
+}
+
+/* :root {
   --color-primary-dark: #0065ab;    
   --color-primary: #1960d4;   
   --color-primary-very-dark: #00558d;     
@@ -19,13 +76,27 @@
   --color-silver-very-dark: #343b46;
   --color-light-black: #22272f;
   --color-dark-black: #111418;
-}
+} 
 
 button:hover {
   transition: transform 500ms;
   transform: scale(1.05);
 }
 
+:root {
+  --color-text: #000000; 
+  --color-bg: #ffffff;
+}
+
+.dark {
+  --color-text: #ffffff; 
+  --color-bg: #000000;
+} */
+
+body {
+  /* color: var(--color-text); */
+  /* background-color: var(--color-bg); */
+}
 
 
 /* @layer base{

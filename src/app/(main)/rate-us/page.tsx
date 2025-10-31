@@ -10,8 +10,8 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 import Link from "next/link";
-import NavBar from "../components/NavBar/NavBar";
-import Footer from "../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 
 // Define review data structure
 type ReviewCategory = {

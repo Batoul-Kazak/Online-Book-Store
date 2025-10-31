@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useContext, useEffect, useState } from "react";
-import { AppContext } from "@/app/context/AppContext";
+import { AppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { FaArrowLeft, FaDeleteLeft } from "react-icons/fa6";
 import Link from "next/link";
 import NavBar from "@/app/components/NavBar/NavBar";
 import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
+import { notFound } from "next/navigation";
 
 const CartPage = () => {
   const {
@@ -51,30 +52,16 @@ const CartPage = () => {
     console.log("cart " + JSON.stringify(currentUserCurrentCart));
   });
 
-  if (!currentLoggedinUser)
-    return (
-      <div className="font-bold absolute flex flex-col gap-10 place-content-center place-items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-4xl text-primary">
-        <p> Please login and try again</p>
-        <Link
-          href="/"
-          className="text-2xl flex gap-3 place-content-center place-items-center font-light py-3 px-5 bg-gradient-to-r from-primary to-primary-dark text-dark-black rounded-2xl"
-        >
-          <FaArrowLeft className="font-bold" />
-          Go Back
-        </Link>
-      </div>
-    );
-
   if (currentUserCurrentCart.length == 0) {
     return (
       <div className="flex flex-col gap-25">
         {/* <NavBar /> */}
-        <div className="flex place-content-center place-items-center flex-col gap-10">
+        <div className="flex flex-col gap-10 place-content-center place-items-center">
           <p className="text-2xl">
             The Cart List is empty, click the button below if you want to
             explore our books
           </p>
-          <button className="text-xl bg-gradient-to-r from-secondary-dark to-secondary font-bold text-white py-3 px-5 rounded-2xl">
+          <button className="px-5 py-3 text-xl font-bold text-white bg-gradient-to-r from-secondary-dark to-secondary rounded-2xl">
             <Link href="/all-books">Explore Books</Link>
           </button>
         </div>
@@ -93,17 +80,17 @@ const CartPage = () => {
   return (
     <div>
       {/* <NavBar /> */}
-      <div className="text-center bg-my-black px-20 text-white flex flex-col gap-5 place-content-center place-items-center pb-10">
-        <h1 className="w-full text-5xl rounded-bl-4xl rounded-br-4xl bg-secondary-dark text-white py-10">
+      <div className="flex flex-col gap-5 px-20 pb-10 text-center text-white bg-my-black place-content-center place-items-center">
+        <h1 className="w-full py-10 text-5xl text-white rounded-bl-4xl rounded-br-4xl bg-secondary-dark">
           {currentLoggedinUser.name} Cart
         </h1>
-        <table className="p-10 flex flex-col place-content-center place-items-center w-full">
+        <table className="flex flex-col w-full p-10 place-content-center place-items-center">
           {/* <caption className="text-xl font-black pb-15 text-silver-very-dark"> */}
           {/* Books Cart
         </caption> */}
-          <th className="flex justify-between w-full p-5 bg-primary-very-dark text-white font-bold">
+          <th className="flex justify-between w-full p-5 font-bold text-white bg-primary-very-dark">
             <td>Cover</td>
-            <td className="w-100 font-bold">Title</td>
+            <td className="font-bold w-100">Title</td>
             <td className="w-20">Price</td>
             <td className="w-30">Type</td>
             <td className="w-20">Language</td>
@@ -116,9 +103,8 @@ const CartPage = () => {
           {temporaryCartList.map((item, i) => (
             <tr
               key={item.id}
-              className={`p-5 hover:bg-primary-very-light hover:*:text-dark-gray relative cursor-pointer hover:text-white transition-all duration-150  text-xl w-full flex justify-between text-silver-very-dark ${
-                i % 2 === 0 ? "bg-primary-light " : "bg-primary "
-              }
+              className={`p-5 hover:bg-primary-very-light hover:*:text-dark-gray relative cursor-pointer hover:text-white transition-all duration-150  text-xl w-full flex justify-between text-silver-very-dark ${i % 2 === 0 ? "bg-primary-light " : "bg-primary "
+                }
               `}
             >
               <td>
@@ -149,16 +135,16 @@ const CartPage = () => {
                   <p>{item.copiesCount}</p>
                   <div className="flex flex-col gap-3">
                     <button onClick={() => handleUpdateBookCopies(item.id)}>
-                      <FaArrowCircleUp className="hover:text-secondary-dark hover:scale-105 duration-300" />
+                      <FaArrowCircleUp className="duration-300 hover:text-secondary-dark hover:scale-105" />
                     </button>
                     <button onClick={() => handleUpdateBookCopies(item.id)}>
-                      <FaArrowCircleDown className="hover:text-secondary-dark hover:scale-105 duration-300" />
+                      <FaArrowCircleDown className="duration-300 hover:text-secondary-dark hover:scale-105" />
                     </button>
                   </div>
                 </td>
               )}
 
-              <td className="w-40 text-lime-600 font-bold">
+              <td className="w-40 font-bold text-lime-600">
                 {item.totalPrice}$
               </td>
               <td className="w-5 cursor-pointer">
@@ -168,10 +154,10 @@ const CartPage = () => {
               </td>
             </tr>
           ))}
-          <tr className="flex gap-5 w-full p-3">
+          <tr className="flex w-full gap-5 p-3">
             <button
               onClick={handleClearCartList}
-              className="py-3 px-5 font-bold bg-secondary-dark text-white rounded-2xl"
+              className="px-5 py-3 font-bold text-white bg-secondary-dark rounded-2xl"
             >
               Clear All
             </button>
@@ -179,20 +165,19 @@ const CartPage = () => {
             <button
               onClick={handleResetDeletedItems}
               disabled={isConfirmed}
-              className="bg-secondary-dark disabled:bg-silver-very-dark text-white rounded-2xl py-3 px-5"
+              className="px-5 py-3 text-white bg-secondary-dark disabled:bg-silver-very-dark rounded-2xl"
             >
               Undo Deleted Items
             </button>
             <button
               disabled={isConfirmed}
               onClick={handleConfirm}
-              className={` text-white rounded-2xl py-3 disabled:bg-silver-very-dark px-5 ${
-                isConfirmed ? "bg-silver-very-dark" : "bg-secondary-dark"
-              }`}
+              className={` text-white rounded-2xl py-3 disabled:bg-silver-very-dark px-5 ${isConfirmed ? "bg-silver-very-dark" : "bg-secondary-dark"
+                }`}
             >
               Confirm
             </button>
-            <button className="py-3 px-5 font-bold bg-secondary-dark text-white rounded-2xl">
+            <button className="px-5 py-3 font-bold text-white bg-secondary-dark rounded-2xl">
               <Link href="/cart/order-form">Order</Link>
             </button>
           </tr>
