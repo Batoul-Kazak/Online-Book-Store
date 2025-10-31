@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans, Roboto, Inter } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import { TranslationProvider } from "@/context/TranslationContext";
 import { AppProvider } from "@/context/AppContext";
-import { Providers } from "./providers";
-import Head from "next/head";
-import Link from "next/link";
-// import { Open_Sans } from "next/font/google";
-import NavBar from '@/app/components/NavBar/NavBar';
-import Footer from '@/app/components/Footer/Footer';
+import NavBar from "@/components/layout/NavBar/NavBar";
+import Footer from "@/components/layout/Footer/Footer";
+
 
 // const openSans = Open_Sans({
 //   subsets: ["latin"],
@@ -68,9 +65,7 @@ export default function RootLayout({
         <AppProvider>
           <TranslationProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <NavBar />
               {children}
-              <Footer />
             </ThemeProvider>
           </TranslationProvider>
         </AppProvider>

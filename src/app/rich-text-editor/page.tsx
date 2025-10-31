@@ -1,5 +1,6 @@
 // app/rich-text-editor/page.tsx
-import RichTextEditor from "@/app/components/RichTextEditor/RichTextEditor";
+
+import RichTextEditor from "../delete";
 
 export default function RichTextEditorPage() {
   return <RichTextEditor />;

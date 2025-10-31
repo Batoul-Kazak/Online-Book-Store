@@ -1,7 +1,6 @@
 "use client";
 
-import { useContext, useState, useCallback } from 'react';
-import { FaWindowClose } from "react-icons/fa";
+import { useContext, useState } from 'react';
 import { AppContext } from "@/context/AppContext";
 import { Input } from "@mui/material";
 import { redirect, useRouter } from "next/navigation";
