@@ -112,7 +112,7 @@ const RichTextEditor = () => {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <div
         className="max-w-6xl pt-30 p-4 min-h-screen bg-cover bg-center bg-no-repeat place-self-center"
         style={bgImage}

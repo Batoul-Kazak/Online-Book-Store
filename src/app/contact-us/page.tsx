@@ -120,8 +120,8 @@ const ContactUsPageInfo = [
 const Contact = () => {
   return (
     <div className="flex flex-col place-content-center place-items-center gap-10 w-full">
-      <NavBar />
-      <div className="flex-col flex items-center gap-16 py-12 w-9/10 min-h-screen">
+      {/* <NavBar /> */}
+      <div className="flex-col flex items-center gap-16 py-30 w-9/10 min-h-screen">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold uppercase font-serif text-primary mb-6">
             Contact Us
@@ -143,7 +143,7 @@ const Contact = () => {
                 <p className="text-silver-very-light text-sm">{card.content}</p>
                 <div className="flex place-items-center place-content-center gap-5 pt-5">
                   <div className="w-10 h-10 p-2 rounded-full bg-primary-dark flex place-items-center place-content-center">
-                    <FaEnvelope className="text-primary text-xl" />
+                    <FaEnvelope className="text-silver-very-light text-xl" />
                   </div>
                   <Link
                     href={card.link}
@@ -164,7 +164,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

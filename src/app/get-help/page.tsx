@@ -229,7 +229,7 @@ const GetHelp = () => {
   return (
     <div className="flex flex-col place-content-center place-items-center gap-15 w-full ">
       <div className="w-full">
-        <NavBar />
+        {/* <NavBar /> */}
         <QuickAccessBar linksArr={getHelpQuickLinks} />
       </div>
       <h1 className="text-6xl font-bold uppercase font-serif text-primary">
@@ -291,7 +291,7 @@ const GetHelp = () => {
           </div>
         ))}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

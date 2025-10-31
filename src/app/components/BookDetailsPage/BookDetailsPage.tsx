@@ -10,13 +10,13 @@ import { AppContext } from "@/app/context/AppContext";
 const BookDetailsPage = ({ bookInfo }) => {
   const { setShowAddToCartPopup, showAddToCartPopup } = useContext(AppContext);
 
-  function ccc() {
+  function handleAddToCartPopup() {
     setShowAddToCartPopup(true);
     console.log(showAddToCartPopup);
   }
   return (
     <div className="">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="p-20 flex gap-10">
         <Image
           src={bookInfo?.img}
@@ -84,7 +84,7 @@ const BookDetailsPage = ({ bookInfo }) => {
             </div>
             <div className="flex gap-5">
               <button
-                onClick={() => ccc()}
+                onClick={() => handleAddToCartPopup()}
                 className="bg-gradient-to-r from-primary to-secondary font-bold text-white py-3 px-5 rounded-2xl"
               >
                 Order Book

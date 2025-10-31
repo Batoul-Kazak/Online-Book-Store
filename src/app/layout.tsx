@@ -8,6 +8,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { Providers } from "./providers";
 // import { Open_Sans } from "next/font/google";
+import NavBar from '@/app/components/NavBar/NavBar';
+import Footer from '@/app/components/Footer/Footer';
 
 // const openSans = Open_Sans({
 //   subsets: ["latin"],
@@ -65,7 +67,11 @@ export default function RootLayout({
           > */}
         <AppProvider>
           <TranslationProvider>
-            <Providers>{children}</Providers>
+            <Providers>
+              <NavBar />
+              {children}
+              <Footer />
+              </Providers>
           </TranslationProvider>
         </AppProvider>
         {/* </ThemeProvider> */}

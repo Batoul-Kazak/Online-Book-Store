@@ -60,7 +60,7 @@ const RateUsPage = ({
           key={star}
           type="button"
           onClick={() => onRatingChange(star)}
-          className="text-2xl hover:scale-110 transition-transform focus:outline-none"
+          className="text-2xl transition-transform hover:scale-110 focus:outline-none"
           aria-label={`Rate ${star} stars`}
         >
           {star <= rating ? (
@@ -95,17 +95,17 @@ const RateUs = () => {
   if (isSubmitted) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12 bg-light-black">
-        <div className="text-center max-w-md bg-my-black p-8 rounded-2xl border border-silver-dark shadow-xl">
-          <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <FaHeart className="text-green-400 text-2xl" />
+        <div className="max-w-md p-8 text-center border shadow-xl bg-my-black rounded-2xl border-silver-dark">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-green-500/20">
+            <FaHeart className="text-2xl text-green-400" />
           </div>
-          <h2 className="text-3xl font-bold text-secondary mb-4">Thank You!</h2>
-          <p className="text-silver-very-light mb-6">
+          <h2 className="mb-4 text-3xl font-bold text-secondary">Thank You!</h2>
+          <p className="mb-6 text-silver-very-light">
             Your feedback helps us build a better library for readers like you.
           </p>
           <Link
             href="/"
-            className="inline-block bg-gradient-to-r from-primary-normal to-secondary-normal text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
+            className="inline-block px-6 py-3 font-medium text-white transition-opacity rounded-full bg-gradient-to-r from-primary-normal to-secondary-normal hover:opacity-90"
           >
             Back to Library
           </Link>
@@ -115,35 +115,35 @@ const RateUs = () => {
   }
 
   return (
-    <div className="flex flex-col items-center gap-16 w-full ">
-      <NavBar />
-      <div className="px-4 py-12 min-h-screen flex flex-col w-full place-content-center place-items-center">
+    <div className="flex flex-col items-center w-full gap-16 ">
+      {/* <NavBar /> */}
+      <div className="flex flex-col w-full min-h-screen px-4 py-30 place-content-center place-items-center">
         {/* Hero Section */}
-        <div className="text-center max-w-2xl">
-          <h1 className="text-5xl md:text-6xl font-bold uppercase font-serif text-primary mb-6">
+        <div className="max-w-2xl text-center">
+          <h1 className="mb-6 font-serif text-5xl font-bold uppercase md:text-6xl text-primary">
             Rate Us
           </h1>
-          <p className="text-xl text-silver-very-light leading-relaxed p-10">
+          <p className="p-10 text-xl leading-relaxed text-silver-very-light">
             Your opinion shapes our library. Take a moment to share your
             experience.
           </p>
         </div>
 
         {/* Rating Form */}
-        <div className="w-full max-w-3xl bg-my-black p-8 rounded-2xl border border-silver-dark shadow-lg">
+        <div className="w-full max-w-3xl p-8 border shadow-lg bg-my-black rounded-2xl border-silver-dark">
           <form onSubmit={handleSubmit} className="space-y-10">
             {/* Dynamic rating categories */}
             {REVIEW_CATEGORIES.map((category) => (
               <div key={category.id} className="space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="mt-1 p-3 bg-primary-dark/20 rounded-xl">
+                  <div className="p-3 mt-1 bg-primary-dark/20 rounded-xl">
                     {category.icon}
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-secondary mb-2">
+                    <h3 className="mb-2 text-2xl font-bold text-secondary">
                       {category.title}
                     </h3>
-                    <p className="text-silver-very-light mb-4">
+                    <p className="mb-4 text-silver-very-light">
                       {category.description}
                     </p>
                     <RateUsPage
@@ -161,18 +161,18 @@ const RateUs = () => {
             ))}
 
             {/* Feedback Textarea */}
-            <div className="space-y-4 pt-6 border-t border-silver-dark/30">
+            <div className="pt-6 space-y-4 border-t border-silver-dark/30">
               <h3 className="text-2xl font-bold text-secondary">
                 Additional Feedback
               </h3>
-              <p className="text-silver-very-light mb-2">
+              <p className="mb-2 text-silver-very-light">
                 What can we improve? (Optional)
               </p>
               <textarea
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
                 rows={4}
-                className="w-full border border-silver-dark rounded-xl p-4 text-white placeholder-silver-dark focus:outline-none focus:ring-2 focus:ring-primary-normal resize-none"
+                className="w-full p-4 text-white border resize-none border-silver-dark rounded-xl placeholder-silver-light focus:outline-none focus:ring-2 focus:ring-primary-normal"
                 placeholder="Tell us what you loved or what we can do better..."
               />
             </div>
@@ -182,11 +182,11 @@ const RateUs = () => {
               <button
                 type="submit"
                 disabled={Object.values(ratings).every((r) => r === 0)}
-                className="w-full bg-gradient-to-r from-primary-normal to-secondary-normal text-white py-4 rounded-xl font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
+                className="w-full py-4 text-lg font-bold text-white transition-opacity bg-gradient-to-r from-primary-normal to-secondary-normal rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
               >
                 Submit Your Review
               </button>
-              <p className="text-center text-silver-dark text-sm mt-3">
+              <p className="mt-3 text-sm text-center text-silver-light">
                 All ratings are anonymous and used only for improvement
               </p>
             </div>
@@ -194,14 +194,14 @@ const RateUs = () => {
         </div>
 
         {/* Trust Note */}
-        <div className="text-center max-w-xl text-silver-very-light/80 text-sm p-10">
+        <div className="max-w-xl p-10 text-sm text-center text-silver-very-light/80">
           <p>
             We read every review. Your feedback directly influences new features
             like better translations, more free books, and improved note-taking.
           </p>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -40,12 +40,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-light-black dark:text-white duration-200">
+    <div className="duration-200 bg-light-black dark:text-white">
       {showAddToCartPopup && <AddToCartPopup />}
       {showSignUpPopup && <SignUpPopup />}
       {showLoginPopup && <LoginPopup />}
       {/* <SignUpPopup /> */}
-      <NavBar />
+      {/* <NavBar /> */}
       <HeroSection />
 
       <BookSearch />
@@ -54,7 +54,7 @@ const Home = () => {
       <Banner />
       <AppStoreBanner />
       <Testimonial />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

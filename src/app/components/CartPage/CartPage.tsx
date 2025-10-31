@@ -68,7 +68,7 @@ const CartPage = () => {
   if (currentUserCurrentCart.length == 0) {
     return (
       <div className="flex flex-col gap-25">
-        <NavBar />
+        {/* <NavBar /> */}
         <div className="flex place-content-center place-items-center flex-col gap-10">
           <p className="text-2xl">
             The Cart List is empty, click the button below if you want to
@@ -92,7 +92,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="text-center bg-my-black px-20 text-white flex flex-col gap-5 place-content-center place-items-center pb-10">
         <h1 className="w-full text-5xl rounded-bl-4xl rounded-br-4xl bg-secondary-dark text-white py-10">
           {currentLoggedinUser.name} Cart

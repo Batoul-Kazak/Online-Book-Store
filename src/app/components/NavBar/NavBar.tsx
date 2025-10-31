@@ -32,7 +32,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className="shadow-lg fixed z-800 bg-light-black dark:text-white duration-200 w-full">
+    <nav className="shadow-lg fixed top-0 right-0 z-800 bg-light-black dark:text-white duration-200 w-full">
       {/* <TestColors /> */}
       {/* <h1 className="text=4xl bg-primary">Heeeel</h1> */}
       <div className="sm:p-25 p-16 py-3 sm:py-0 dark:bg-[#0065ab] bg-white w-full">

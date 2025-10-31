@@ -14,7 +14,7 @@ import Footer from "../components/Footer/Footer";
 const About = () => {
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-light-black">
-      <NavBar />
+      {/* <NavBar /> */}
 
       <div className="flex flex-col items-center py-40 px-4 w-full max-w-7xl">
         <div className="text-center max-w-3xl mb-20">
@@ -123,7 +123,7 @@ const About = () => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
