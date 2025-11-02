@@ -1,5 +1,6 @@
+"use client"
 import { AppContext } from "@/context/AppContext";
-import { mockUsers } from "@/lib";
+import { mockUsers } from "@/_lib";
 import { useContext, useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
 

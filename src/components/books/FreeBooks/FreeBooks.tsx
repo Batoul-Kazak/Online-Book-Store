@@ -197,15 +197,15 @@ const FreeBooks = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search books by title or author..."
-            className="w-full p-4 text-xl rounded-xl bg-silver-dark text-silver-very-light placeholder-silver-light focus:outline-0 focus:ring-2 focus:ring-primary"
+            className="w-full p-4 text-xl border-2 border-white rounded-xl bg-silver-dark text-silver-very-light placeholder-silver-light focus:outline-0 focus:ring-2 focus:ring-primary"
           />
           {books.length <= 0 && (
-            <p className="justify-center p-2  text-secondary">
+            <p className="justify-center p-2 text-secondary">
               It seems like you are offline
             </p>
           )}
         </div>
-        <div className="p-6 mb-8  rounded-xl"></div>
+        <div className="p-6 mb-8 rounded-xl"></div>
         {/* i will complete this later */}
       </div>
     </div>

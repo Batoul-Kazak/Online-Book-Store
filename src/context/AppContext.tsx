@@ -1,12 +1,12 @@
 "use client";
 
 import { createContext, useState, ReactNode, useEffect } from "react";
-import { mockUsers } from "@/lib/index";
+import { mockUsers } from "@/_lib/index";
 
 export const AppContext = createContext({});
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [currentLoggedinUser, setCurrentLoggedinUser] = useState(null);
+  const [currentLoggedinUser, setCurrentLoggedinUser] = useState("user_6");
   const [currentUserCurrentCart, setCurrentUserCurrentCart] = useState<any[]>(
     []
   );

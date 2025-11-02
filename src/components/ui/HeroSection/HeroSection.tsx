@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useState } from "react";
 import vector from "@/app/assets/website/blue-pattern.png";
-import { allBooks } from "@/lib/index";
+import { allBooks } from "@/_lib/index";
 import Image from "next/image";
 import { useTranslation } from "@/context/TranslationContext";
 import Link from "next/link";

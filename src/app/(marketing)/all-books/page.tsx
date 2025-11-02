@@ -4,7 +4,8 @@ import PaidBookDetails from "@/components/ui/PaidBookDetails/PaidBookDetails";
 
 const AllBooksPage = () => {
   return (
-    <div className="flex flex-col gap-20 place-content-center place-items-center">
+    // dark:bg-light-black dark:text-silver-very-light text-light-black bg-silver-very-light
+    <div className="flex flex-col gap-20 place-content-center place-items-center ">
       {/* <NavBar /> */}
       {/* <PaidBooks /> */}
       <div className="flex flex-col place-content-center place-items-center">

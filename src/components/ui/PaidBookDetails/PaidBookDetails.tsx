@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
-import { allBooks } from "@/lib/index";
+import { allBooks } from "@/_lib/index";
 import { AppContext } from "@/context/AppContext";
 import { useTranslation } from "@/context/TranslationContext";
 
@@ -32,8 +32,8 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
         } gap-15 md:gap-5 place-items-center place-self-center py-10`}
     >
       {booksToDisplay.map((book, i) => (
-        <div key={book.id} className={`pt-12${toDisplayIn === "homePage" ? "w-[20rem]" : "w-[15rem]"}`} data-aos="zoom-in">
-          <div className={`flex relative ${toDisplayIn === "homePage" ? "h-[48rem] w-[22rem]" : "w-auto h-[35rem]"} flex-col gap-5 pt-20 justify-content-center place-items-center bg-silver-very-dark p-7 rounded-2xl`}>
+        <div key={book.id} className={`pt-12${toDisplayIn === "homePage" ? "w-[20rem]" : "w-[15rem]"} `} data-aos="zoom-in">
+          <div className={`flex relative ${toDisplayIn === "homePage" ? "h-[48rem] w-[22rem]" : "w-auto h-[35rem]"} flex-col gap-5 pt-20 justify-content-center place-items-center bg-gray-800/80 p-7 rounded-2xl`}>
             <div className={`w-full ${toDisplayIn === "homePage" ? "h-70" : "h-37"}`}></div>
 
             <div className="flex justify-center place-items-center">
@@ -46,7 +46,7 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
                 data-aos-delay="200"
               />
               <div
-                className={`flex gap-1 justify-center absolute ${toDisplayIn === "homePage" ? "top-65" : "top-45"} right-5 rounded-tr-[4px] rounded-br-[4px] bg-black/80 p-2 font-bold`}
+                className={`flex gap-1 justify-center absolute ${toDisplayIn === "homePage" ? "top-65" : "top-45"} right-5 rounded-tr-[4px] rounded-br-[4px] bg-black/70 rounded-2xl p-2 font-bold`}
                 data-aos="slide-down"
                 data-aos-duration="700"
                 data-aos-delay="200"
@@ -86,20 +86,20 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
               </div>
             </div>
 
-            <h1 className={`${toDisplayIn === "homePage" ? "text-3xl" : "text-2xl"} max-w-[20rem] overflow-clip font-bold min-h-[5rem] text-primary-light`}>
+            <h1 className={`${toDisplayIn === "homePage" ? "text-3xl" : "text-2xl"} max-w-[20rem] overflow-clip font-bold min-h-[5rem] text-[#0065ab] dark:text-[#75d0ff]`}>
               {book.title[lang]}
             </h1>
             <p className="text-left line-clamp-4">{book.description[lang]}</p>
             <Link
               // href={`/book/${book.id}`}
-              href={`/paid-books/${book.id}`}
+              href={`/all-books/${book.id}`}
               className="text-blue-200 underline cursor-pointer"
             >
               Show More Details
             </Link>
             <Link
               href="/order-book"
-              className="w-full px-4 py-3 text-xl font-bold text-center text-white duration-200 bg-gradient-to-r from-primary-dark to-primary-light hover:scale-105 rounded-2xl"
+              className="w-full px-4 py-3 text-xl font-bold text-center duration-200 bg-gradient-to-r from-primary-dark to-primary-light hover:scale-105 rounded-2xl"
             >
               Order Book
             </Link>

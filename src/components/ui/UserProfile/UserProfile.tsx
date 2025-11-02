@@ -281,7 +281,7 @@
 import { AppContext } from "@/context/AppContext";
 import { useContext, useState, useMemo } from "react";
 import Image from "next/image";
-import { allBooks } from "@/lib";
+import { allBooks } from "@/_lib";
 import Link from "next/link";
 import NavBar from "@/components/layout/NavBar/NavBar";
 
@@ -500,7 +500,7 @@ const UserProfile = () => {
               <div className="flex flex-wrap gap-5 px-10">
                 {currentLoggedinUser.currentReadings.map((bookID) => (
                   <Link
-                    href={`/paid-books/${bookID}`}
+                    href={`/all-books/${bookID}`}
                     className="px-5 py-3 text-xl duration-300 cursor-pointer hover:scale-105 bg-secondary-dark/50 hover:bg-secondary-dark/90 rounded-2xl text-light-silver"
                     key={bookID}
                   >
@@ -517,7 +517,7 @@ const UserProfile = () => {
               <div className="flex flex-wrap gap-5 px-10">
                 {currentLoggedinUser.readingHistory.map((bookID) => (
                   <Link
-                    href={`/paid-books/${bookID}`}
+                    href={`/all-books/${bookID}`}
                     className="px-5 py-3 text-xl duration-300 cursor-pointer hover:scale-105 bg-secondary-dark/50 hover:bg-secondary-dark/90 rounded-2xl text-light-silver"
                     key={bookID}
                   >
@@ -534,7 +534,7 @@ const UserProfile = () => {
               <div className="flex flex-wrap gap-5 px-10">
                 {currentLoggedinUser.savedBooks.map((bookID) => (
                   <Link
-                    href={`/paid-books/${bookID}`}
+                    href={`/all-books/${bookID}`}
                     className="px-5 py-3 text-xl duration-300 cursor-pointer hover:scale-105 bg-secondary-dark/50 hover:bg-secondary-dark/90 rounded-2xl text-light-silver"
                     key={bookID}
                   >

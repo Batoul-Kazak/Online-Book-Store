@@ -4,12 +4,14 @@ import Logo from "@/app/assets/website/logo.png";
 import Image from "next/image";
 import defaultProfileImage from "@/app/assets/website/defaultProfileImage.png";
 
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCartShopping, FaPerson } from "react-icons/fa6";
 import Link from "next/link";
 import DarkMode from "./DarkMode/DarkMode";
 import { AppContext } from "@/context/AppContext";
 import { useTranslation } from "@/context/TranslationContext";
-import { APP_LINKS } from "@/lib/index";
+import { APP_LINKS } from "@/_lib/index";
+import { usePathname } from "next/navigation";
+// import { link } from "fs";
 
 const languages = [
   { value: "en", name: "English" },
@@ -26,16 +28,17 @@ const NavBar = () => {
     setShowLoginPopup,
   } = useContext(AppContext); //
   const { t, lang, setLang } = useTranslation();
+  const pathname = usePathname();
 
   useEffect(function () {
     console.log(lang);
   }, []);
 
   return (
-    <nav className="fixed top-0 right-0 w-full duration-200 shadow-lg z-800 bg-light-black dark:text-white">
+    <nav className="fixed top-0 right-0 w-full duration-200 bg-transparent shadow-lg z-800 dark:text-white">
       {/* <TestColors /> */}
       {/* <h1 className="text=4xl bg-primary">Heeeel</h1> */}
-      <div className="sm:p-25 p-16 py-3 sm:py-0 dark:bg-[#0065ab] bg-white w-full">
+      <div className="w-full p-16 py-3 bg-white sm:p-25 sm:py-0 dark:bg-primary/75">
         <div className="flex justify-between ">
           <div>
             <Link
@@ -48,16 +51,20 @@ const NavBar = () => {
           </div>
           <div className="flex items-center justify-between gap-4">
             <ul className="flex items-center gap-4 text-xl sm:flex">
-              {APP_LINKS.map((item) => (
-                <li key={item.id}>
-                  <Link
-                    href={item.link}
-                    className="inline-block px-4 duration-300 text-silver-very-light hover:scale-105 hover:text-white"
-                  >
-                    {item.key}
-                  </Link>
-                </li>
-              ))}
+              {APP_LINKS.map((item) => {
+                const isActive = pathname === item.link || pathname.startsWith(item.link);
+                return (
+                  <li key={item.id}>
+                    <Link
+                      href={item.link}
+                      className={` ${isActive ? "text-secondary-very-light" : "text-silver-very-light"} inline-block px-4 font-bold duration-300 hover:scale-105 hover:text-white`}
+                    >
+                      {(item.key).replace('_', ' ')}
+                    </Link>
+                  </li>
+                )
+              })}
+
 
               <li className="relative cursor-pointer group">
                 {/* <p className="flex items-center h-[72px] gap[2px]">
@@ -96,25 +103,20 @@ const NavBar = () => {
               </li>
               <li className="duration-300  cursor-pointer hover:scale-110 hover:*:text-white hover:*:border-silver-light">
                 {currentLoggedinUser ? (
-                  <div
+                  <button
                     onClick={() => setCurrentLoggedinUser(null)}
                     className="flex gap-1 p-2 outline-white"
                   >
-                    {/* <FaPerson /> */}
-                    {/* <FaPersonBreastfeeding /> */}
-                    {/* <FaPerson className="w-7 h-7 text-secondary" />  */}
                     Sign out
-                  </div>
+                  </button>
                 ) : (
-                  <div
-                    onClick={() => setShowLoginPopup(true)}
+                  <Link
+                    href="/login"
                     className="flex gap-1 p-2 font-bold underline outline-white"
                   >
                     {/* <FaPerson /> */}
-                    {/* <FaPersonBreastfeeding /> */}
-                    {/* <FaPerson className="w-7 h-7 text-secondary" />  */}
                     Login
-                  </div>
+                  </Link>
                 )}
               </li>
               <li className="relative cursor-pointer duration-300 hover:scale-110 hover:*:text-white hover:*:border-silver-light">
@@ -134,15 +136,12 @@ const NavBar = () => {
                     </p>
                   </Link>
                 ) : (
-                  <div
-                    onClick={() => setShowSignUpPopup(true)}
+                  <Link
+                    href="/signup"
                     className="flex gap-1 p-2 font-bold underline outline-white"
                   >
-                    {/* <FaPerson /> */}
-                    {/* <FaPersonBreastfeeding /> */}
-                    {/* <FaPerson className="w-7 h-7 text-secondary" />  */}
                     Sign Up
-                  </div>
+                  </Link>
                 )}
               </li>
               <li>

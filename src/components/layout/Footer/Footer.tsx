@@ -9,11 +9,12 @@ import {
 } from "react-icons/fa";
 import footerLogo from "@/app/assets/website/logo.png";
 import Image from "next/image";
-import { APP_LINKS } from "@/lib/index"
+import { APP_LINKS } from "@/_lib/index"
 
 const Footer = () => {
   return (
-    <div className="w-full bg-gray-100 dark:bg-gray-950">
+    // dark:bg-dark-black dark:text-white text-light-black bg-white
+    <div className="w-full bg-gray-800 ">
       <section className="container">
         <div className="grid py-5 md:grid-cols-3">
           <div className="px-4 py-8 ">

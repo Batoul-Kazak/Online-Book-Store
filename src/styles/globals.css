@@ -1,25 +1,21 @@
 
 @import "tailwindcss";
 
-/* ===== LIGHT MODE (DEFAULT) ===== */
 :root {
-  /* Backgrounds: use LIGHT variants */
-  --bg-primary: var(--color-primary-very-light);    /* e.g., #b6e4ff */
-  --bg-primary-muted: var(--color-primary-light);   /* e.g., #75d0ff */
-  --bg-secondary: var(--color-secondary-very-light);/* e.g., #fbcfe3 */
-  --bg-secondary-muted: var(--color-secondary-light);/* e.g., #f8a9ca */
-  --bg-surface: #ffffff;                            /* pure white or light gray */
+  --bg-primary: var(--color-primary-very-light);    
+  --bg-primary-muted: var(--color-primary-light);   
+  --bg-secondary: var(--color-secondary-very-light);
+  --bg-secondary-muted: var(--color-secondary-light);
+  --bg-surface: #ffffff;                        
   --bg-surface-muted: #f8f9fa;
 
-  /* Text: use DARK variants */
-  --text-primary: var(--color-primary-very-dark);   /* e.g., #00558d */
-  --text-primary-muted: var(--color-primary-dark);  /* e.g., #0065ab */
-  --text-secondary: var(--color-secondary-very-dark);/* e.g., #9c183d */
-  --text-secondary-muted: var(--color-secondary-dark);/* e.g., #bd1949 */
-  --text-body: var(--color-silver);                 /* e.g., #435061 */
-  --text-muted: var(--color-silver-light);          /* e.g., #677a90 */
+  --text-primary: var(--color-primary-very-dark);   
+  --text-primary-muted: var(--color-primary-dark);  
+  --text-secondary: var(--color-secondary-very-dark);
+  --text-secondary-muted: var(--color-secondary-dark);
+  --text-body: var(--color-silver);                 
+  --text-muted: var(--color-silver-light);          
 
-  /* Your original palette (keep for reference/component use) */
   --color-primary-dark: #0065ab;
   --color-primary: #1960d4;
   --color-primary-very-dark: #00558d;
@@ -39,71 +35,30 @@
   --color-dark-black: #111418;
 }
 
-/* ===== DARK MODE ===== */
 .dark {
-  /* Backgrounds: use DARK variants */
-  --bg-primary: var(--color-primary-very-dark);     /* e.g., #00558d */
-  --bg-primary-muted: var(--color-primary-dark);    /* e.g., #0065ab */
-  --bg-secondary: var(--color-secondary-very-dark); /* e.g., #9c183d */
-  --bg-secondary-muted: var(--color-secondary-dark);/* e.g., #bd1949 */
-  --bg-surface: var(--color-dark-black);            /* #111418 */
-  --bg-surface-muted: var(--color-light-black);     /* #22272f */
+  --bg-primary: var(--color-light-black);     
+  --bg-primary-muted: var(--color-primary-dark);    
+  --bg-secondary: var(--color-secondary-very-dark); 
+  --bg-secondary-muted: var(--color-secondary-dark);
+  --bg-surface: var(--color-dark-black);
+  --bg-surface-muted: var(--color-light-black);     
 
-  /* Text: use LIGHT variants */
-  --text-primary: var(--color-primary-very-light);  /* e.g., #b6e4ff */
-  --text-primary-muted: var(--color-primary-light); /* e.g., #75d0ff */
-  --text-secondary: var(--color-secondary-very-light);/* e.g., #fbcfe3 */
-  --text-secondary-muted: var(--color-secondary-light);/* e.g., #f8a9ca */
-  --text-body: var(--color-silver-very-light);      /* e.g., #b1bcc8 */
-  --text-muted: var(--color-silver-light);          /* e.g., #677a90 */
+  /* --bg-light-black: var(var(--color-light-black));
+  --bg: var(var(--color-light-black)); */
+
+  --text-primary: var(--color-primary-very-light);  
+  --text-primary-muted: var(--color-primary-light); 
+  --text-secondary: var(--color-secondary-very-light); 
+  --text-secondary-muted: var(--color-secondary-light);
+  --text-body: var(--color-silver-very-light);
+  --text-muted: var(--color-silver-light);
 }
 
-/* :root {
-  --color-primary-dark: #0065ab;    
-  --color-primary: #1960d4;   
-  --color-primary-very-dark: #00558d;     
-  --color-primary-light: #75D0FF;    
-  --color-primary-very-light: #b6e4ff;    
-  --color-secondary: #eb4985;  
-  --color-secondary-dark: #bd1949;  
-  --color-secondary-very-dark: #9c183d;  
-  --color-secondary-light: #f8a9ca;  
-  --color-secondary-very-light: #fbcfe3;  
-  --color-silver: #435061;
-  --color-silver-light: #677a90;
-  --color-silver-very-light: #b1bcc8;
-  --color-silver-dark: #3d4856;
-  --color-silver-very-dark: #343b46;
-  --color-light-black: #22272f;
-  --color-dark-black: #111418;
-} 
 
 button:hover {
   transition: transform 500ms;
   transform: scale(1.05);
 }
-
-:root {
-  --color-text: #000000; 
-  --color-bg: #ffffff;
-}
-
-.dark {
-  --color-text: #ffffff; 
-  --color-bg: #000000;
-} */
-
-body {
-  /* color: var(--color-text); */
-  /* background-color: var(--color-bg); */
-}
-
-
-/* @layer base{
-    body {
-        @apply dark:bg-gray-800 bg-white
-    }
-} */
 
  @theme {
   --text-xl: 1.1rem;
@@ -125,6 +80,8 @@ body {
   --color-light-black: var(--color-light-black);
   --color-dark-black: var(--color-dark-black);
 }   
+
+
 
 .hide-scrollbar {
   -ms-overflow-style: none; 
@@ -180,12 +137,6 @@ body {
   background-color: var(--color-primary-light);
 }
 
-.hover-child:hover{
-  /* opacity: 50%; */
-  background-color: var(--color-primary-dark);
-  color: white;
-}
-
 .animate-swivel {
   animation: swivel 2s ease-in-out infinite;
 }
@@ -233,176 +184,14 @@ body {
   animation: pulse-glow 1s ease-in-out infinite;
 }
 
-/* button{
-  bg-gradient-to-r from-primary to-secondary font-bold text-white py-3 px-5 rounded-2xl
+button{
+  /* bg-gradient-to-r from-primary to-secondary font-bold text-white py-3 px-5 rounded-2xl */
 
   background-image: linea;
-}  */
+}  
 
-
- /* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary: #60a5fa;  
-    --color-secondary: #ec4899; 
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}  */
 
 
 button {
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @import "tailwindcss";
-
-
-:root {
-  --color-primary-very-dark: #00558d;
-  --color-primary-dark: #0065ab;
-  --color-primary: #1960d4;
-  --color-primary-light: #75d0ff;
-  --color-primary-very-light: #b6e4ff;
-
-  --color-secondary-very-dark: #9c183d;
-  --color-secondary-dark: #bd1949;
-  --color-secondary: #eb4985;
-  --color-secondary-light: #f8a9ca;
-  --color-secondary-very-light: #fbcfe3;
-
-  --color-silver-very-dark: #343b46;
-  --color-silver-dark: #3d4856;
-  --color-silver: #435061;
-  --color-silver-light: #677a90;
-  --color-silver-very-light: #b1bcc8;
-
-  --color-light-black: #22272f;
-  --color-dark-black: #111418;
-
-  --background: #ffffff;
-  --foreground: #111827;
-}
-
-.dark {
-  --color-primary-very-dark: #004a7a;
-  --color-primary-dark: #005aa0;
-  --color-primary: #3a7ee0;
-  --color-primary-light: #8ad8ff;
-  --color-primary-very-light: #cceaff;
-
-  --color-secondary-very-dark: #8a1535;
-  --color-secondary-dark: #d12055;
-  --color-secondary: #f06292;
-  --color-secondary-light: #fab1d1;
-  --color-secondary-very-light: #fdd8e8;
-
-  --color-silver-very-dark: #2a2f39;
-  --color-silver-dark: #353f4d;
-  --color-silver: #525e6d;
-  --color-silver-light: #8a97a7;
-  --color-silver-very-light: #c5ced9;
-
-  --color-light-black: #1a1f26;
-  --color-dark-black: #0b0d10;
-
-  --background: #000000;
-  --foreground: #f1f5f9;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: background-color 0.2s, color 0.2s;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  transition: transform 0.5s;
-  transform: scale(1.05);
-}
-
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.my-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-primary-dark);
-}
-.my-scrollbar::-webkit-scrollbar {
-  width: 10px;
-}
-.my-scrollbar::-webkit-scrollbar-track {
-  background-color: var(--color-light-black);
-  border-radius: 4px;
-}
-.my-scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary-light);
-  border-radius: 4px;
-  border: 2px solid var(--color-silver);
-}
-
-
-.hover-child:hover {
-  background-color: var(--color-primary-dark);
-  color: white;
-}
-
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes swivel {
-  0% { transform: perspective(1000px) rotateX(10deg) rotateY(-10deg); }
-  50% { transform: perspective(1000px) rotateX(-5deg) rotateY(5deg); }
-  100% { transform: perspective(1000px) rotateX(10deg) rotateY(-10deg); }
-}
-.animate-swivel {
-  animation: swivel 2s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 0.5; transform: scale(1); }
-}
-.animate-pulse-glow {
-  animation: pulse-glow 1s ease-in-out infinite;
-}
-
-.text-hue-light {
-  text-shadow: 
-    0 0 8px var(--color-primary-very-dark),
-    0 0 16px var(--color-primary),
-    0 0 24px var(--color-primary-dark);
-  color: var(--color-primary-very-light);
-} */

@@ -27,6 +27,7 @@ import profileImg6 from "@/app/assets/website/thumbnail (15).jpg";
 import profileImg7 from "@/app/assets/website/thumbnail (16).jpg";
 import profileImg8 from "@/app/assets/website/thumbnail (17).jpg";
 import profileImg9 from "@/app/assets/website/thumbnail (18).jpg";
+import backgroundImg from "@/app/assets/website/background2.jpg";
 
 import { Book } from "@/types";
 
@@ -39,6 +40,7 @@ export const APP_LINKS = [
   { id: 6, key: "get_help", link: "/get-help" },
   { id: 7, key: "write_notes", link: "/rich-text-editor" },
 ];
+
 
 export const allBooks: Book[] = [
   {
@@ -824,7 +826,7 @@ export const mockUsers: User[] = [
   {
     id: "user_6",
     email: "anastasia@example.com",
-    password: "ana987h5",
+    password: "anaana",
     name: "Анастасия Волкова",
     profileImage: profileImg6,
     role: "user",
@@ -1128,4 +1130,109 @@ export const mockUsers: User[] = [
       },
     ],
   },
+];
+
+
+export const getHelpQuickLinks = [
+    {
+        tag: "quick description",
+        address: "Who we are and what we offer to our customers ?",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! ",
+        image: backgroundImg,
+    },
+    {
+        tag: "questions",
+        address: "Top Frequent Questions users ask",
+        questions: [
+            {
+                id: "q1",
+                question: "question1",
+                answer:
+                    "sdkfmsdnfs df sdf sdm f,msd f,m sd,mf sd,mf ,smd f,smd f,smd f,msd f,m sd,mf s,dm f,smd fm sd,mf ,sdm f,sdm f,msd f,",
+            },
+            {
+                id: "q2",
+                question: "question2",
+                answer:
+                    "sdkfmsdnfs df sdf sdm f,msd f,m sd,mf sd,mf ,smd f,smd f,smd f,msd f,m sd,mf s,dm f,smd fm sd,mf ,sdm f,sdm f,msd f,",
+            },
+            {
+                id: "q3",
+                question: "question3",
+                answer:
+                    "sdkfmsdnfs df sdf sdm f,msd f,m sd,mf sd,mf ,smd f,smd f,smd f,msd f,m sd,mf s,dm f,smd fm sd,mf ,sdm f,sdm f,msd f,",
+            },
+            {
+                id: "q4",
+                question: "question4",
+                answer:
+                    "sdkfmsdnfs df sdf sdm f,msd f,m sd,mf sd,mf ,smd f,smd f,smd f,msd f,m sd,mf s,dm f,smd fm sd,mf ,sdm f,sdm f,msd f,",
+            },
+            {
+                id: "q5",
+                question: "question5",
+                answer:
+                    "sdkfmsdnfs df sdf sdm f,msd f,m sd,mf sd,mf ,smd f,smd f,smd f,msd f,m sd,mf s,dm f,smd fm sd,mf ,sdm f,sdm f,msd f,",
+            },
+            {
+                id: "q6",
+                question: "question6",
+                answer:
+                    "sdkfmsdnfs df sdf sdm f,msd f,m sd,mf sd,mf ,smd f,smd f,smd f,msd f,m sd,mf s,dm f,smd fm sd,mf ,sdm f,sdm f,msd f,",
+            },
+        ],
+    },
+    {
+        tag: "buy books",
+        address: "How i can buy a book?",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!",
+    },
+    {
+        tag: "search & filters",
+        address: "How search and filter operation can save your time and effort?",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!",
+    },
+    {
+        tag: "sell books",
+        address:
+            "How i can buy my Lectures/Strories/Books? and how i can get feedbacks about my books",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!",
+    },
+    {
+        tag: "free books",
+        address: "How i can find free versions of books i want?",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!",
+    },
+    {
+        tag: "delivery to your home",
+        address: "How to get hand copies from books?",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!",
+    },
+    ,
+    {
+        tag: "preferences",
+        address: "How i can manage my prefrences?",
+        content:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi sunt eos, sed facilis voluptatem laborum officia eius sapiente voluptatum, delectus deleniti soluta perspiciatis porro ex, dignissimos repellendus mollitia veniam aliquam!",
+    },
+    //   ,{
+    // "book translation"
+    //
+    // },{
+    // "e-books"
+    //
+    // },
+    // {
+    // "online reading"
+    //
+    // },{
+    //
+    // "notes"
+    // }
 ];
