@@ -17,14 +17,14 @@ const bannerImage = {
 const AppStoreBanner = () => {
   return (
     <div
-      className="bg-gray-100 dark:bg-silver-very-dark text-white py-10"
+      className="bg-gray-100 text-white py-10"
       style={bannerImage}
     >
       <div className="space-y-6 max-w-xl mx-auto">
         <div>
           <h1
             data-aos="slide-down"
-            className="text-2xl text-center sm:text-4xl font-semibold p-5"
+            className="text-xl text-center sm:text-3xl font-semibold p-5"
           >
             Read Books at your fingertips
           </h1>

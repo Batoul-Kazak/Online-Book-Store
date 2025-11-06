@@ -80,11 +80,11 @@ const OrderBookPage = () => {
 
             <section className="flex flex-col gap-4 place-items-center">
                 {/* <div className="fixed"> */}
-                <h1 className="text-4xl font-bold text-center text-primary">
+                <h1 className="text-3xl font-bold text-center text-primary">
                     Adding to Cart
                 </h1>
                 {/* </div> */}
-                <h2 className="flex gap-3 text-2xl text-secondary-dark">
+                <h2 className="flex gap-3 text-xl text-secondary-dark">
                     {currentOrderedBookInfo.title}(
                     <span className="font-mono text-lime-300">
                         {currentOrderedBookInfo.price}$
@@ -191,19 +191,19 @@ const OrderBookPage = () => {
                 >
                     <option
                         value="third edition (last)"
-                        className="text-secondary bg-silver-very-dark"
+                        className="text-secondary "
                     >
                         third edition (last)
                     </option>
                     <option
                         value="second edition"
-                        className="text-secondary bg-silver-very-dark"
+                        className="text-secondary "
                     >
                         second edition
                     </option>
                     <option
                         value="first edition"
-                        className="text-secondary bg-silver-very-dark"
+                        className="text-secondary"
                     >
                         first edition
                     </option>

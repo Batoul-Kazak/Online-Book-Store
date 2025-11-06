@@ -33,7 +33,7 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
     >
       {booksToDisplay.map((book, i) => (
         <div key={book.id} className={`pt-12${toDisplayIn === "homePage" ? "w-[20rem]" : "w-[15rem]"} `} data-aos="zoom-in">
-          <div className={`flex relative ${toDisplayIn === "homePage" ? "h-[48rem] w-[22rem]" : "w-auto h-[35rem]"} flex-col gap-5 pt-20 justify-content-center place-items-center bg-gray-800/80 p-7 rounded-2xl`}>
+          <div className={`flex relative ${toDisplayIn === "homePage" ? "h-[48rem] w-[22rem]" : "w-auto h-[35rem]"} flex-col gap-5 pt-20 justify-content-center place-items-center bg-silver p-7 rounded-2xl`}>
             <div className={`w-full ${toDisplayIn === "homePage" ? "h-70" : "h-37"}`}></div>
 
             <div className="flex justify-center place-items-center">
@@ -93,7 +93,7 @@ const PaidBookDetails = ({ toDisplayIn }: string) => {
             <Link
               // href={`/book/${book.id}`}
               href={`/all-books/${book.id}`}
-              className="text-blue-200 underline cursor-pointer"
+              className="underline cursor-pointer text-secondary"
             >
               Show More Details
             </Link>

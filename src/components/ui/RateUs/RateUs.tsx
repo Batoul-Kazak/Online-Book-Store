@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
     FaStar,
-    FaStarHalfAlt,
     FaRegStar,
     FaHeart,
     FaBook,
@@ -12,7 +11,6 @@ import {
 import Link from "next/link";
 import { JSX } from "react";
 
-// Define review data structure
 type ReviewCategory = {
     id: string;
     title: string;
@@ -20,7 +18,6 @@ type ReviewCategory = {
     icon: JSX.Element;
 };
 
-// Review categories (no repetition!)
 const REVIEW_CATEGORIES: ReviewCategory[] = [
     {
         id: "overall",
@@ -42,7 +39,6 @@ const REVIEW_CATEGORIES: ReviewCategory[] = [
     },
 ];
 
-// Star rating component (reusable)
 const RateUsPage = ({
     rating,
     onRatingChange,
@@ -52,6 +48,8 @@ const RateUsPage = ({
 }) => {
     const stars = [1, 2, 3, 4, 5];
 
+
+
     return (
         <div className="flex gap-1">
             {stars.map((star) => (
@@ -59,7 +57,7 @@ const RateUsPage = ({
                     key={star}
                     type="button"
                     onClick={() => onRatingChange(star)}
-                    className="text-2xl transition-transform hover:scale-110 focus:outline-none"
+                    className="text-xl transition-transform hover:scale-105 "
                     aria-label={`Rate ${star} stars`}
                 >
                     {star <= rating ? (
@@ -74,7 +72,6 @@ const RateUsPage = ({
 };
 
 const RateUs = () => {
-    // State for ratings and feedback
     const [ratings, setRatings] = useState<Record<string, number>>(
         REVIEW_CATEGORIES.reduce((acc, category) => {
             acc[category.id] = 0;
@@ -83,30 +80,35 @@ const RateUs = () => {
     );
     const [feedback, setFeedback] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const isDisabled = Object.values(ratings).every(item => item === 0);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Submitted ratings:", ratings, "Feedback:", feedback);
         setIsSubmitted(true);
-        // In a real app: send to your backend or email service
     };
+
+    useEffect(function () {
+        console.log(ratings + " " + isDisabled)
+
+    }, [ratings])
 
     if (isSubmitted) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12 bg-light-black">
+            <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12 ">
                 <div className="max-w-md p-8 text-center border shadow-xl bg-my-black rounded-2xl border-silver-dark">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-green-500/20">
-                        <FaHeart className="text-2xl text-green-400" />
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-primary-dark/30">
+                        <FaHeart className="text-2xl text-secondary" />
                     </div>
-                    <h2 className="mb-4 text-3xl font-bold text-secondary">Thank You!</h2>
+                    <h2 className="mb-4 text-2xl font-bold text-secondary">Thank You!</h2>
                     <p className="mb-6 text-silver-very-light">
                         Your feedback helps us build a better library for readers like you.
                     </p>
                     <Link
                         href="/"
-                        className="inline-block px-6 py-3 font-medium text-white transition-opacity rounded-full bg-gradient-to-r from-primary-normal to-secondary-normal hover:opacity-90"
+                        className="inline-block px-6 py-3 font-medium text-white transition-opacity rounded-2xl bg-gradient-to-r from-primary to-primary-light hover:opacity-90"
                     >
-                        Back to Library
+                        Back to Home Page
                     </Link>
                 </div>
             </div>
@@ -115,11 +117,9 @@ const RateUs = () => {
 
     return (
         <div className="flex flex-col items-center w-full gap-16 ">
-            {/* <NavBar /> */}
             <div className="flex flex-col w-full min-h-screen px-4 py-30 place-content-center place-items-center">
-                {/* Hero Section */}
                 <div className="max-w-2xl text-center">
-                    <h1 className="mb-6 font-serif text-5xl font-bold uppercase md:text-6xl text-primary">
+                    <h1 className="mb-6 font-serif text-4xl font-bold uppercase md:text-5xl text-primary">
                         Rate Us
                     </h1>
                     <p className="p-10 text-xl leading-relaxed text-silver-very-light">
@@ -128,10 +128,8 @@ const RateUs = () => {
                     </p>
                 </div>
 
-                {/* Rating Form */}
                 <div className="w-full max-w-3xl p-8 border shadow-lg bg-my-black rounded-2xl border-silver-dark">
                     <form onSubmit={handleSubmit} className="space-y-10">
-                        {/* Dynamic rating categories */}
                         {REVIEW_CATEGORIES.map((category) => (
                             <div key={category.id} className="space-y-4">
                                 <div className="flex items-start gap-4">
@@ -139,7 +137,7 @@ const RateUs = () => {
                                         {category.icon}
                                     </div>
                                     <div>
-                                        <h3 className="mb-2 text-2xl font-bold text-secondary">
+                                        <h3 className="mb-2 text-xl font-bold text-secondary">
                                             {category.title}
                                         </h3>
                                         <p className="mb-4 text-silver-very-light">
@@ -159,9 +157,8 @@ const RateUs = () => {
                             </div>
                         ))}
 
-                        {/* Feedback Textarea */}
                         <div className="pt-6 space-y-4 border-t border-silver-dark/30">
-                            <h3 className="text-2xl font-bold text-secondary">
+                            <h3 className="text-xl font-bold text-secondary">
                                 Additional Feedback
                             </h3>
                             <p className="mb-2 text-silver-very-light">
@@ -176,12 +173,11 @@ const RateUs = () => {
                             />
                         </div>
 
-                        {/* Submit Button */}
-                        <div className="pt-4">
+                        <div className="flex flex-col pt-4">
                             <button
                                 type="submit"
-                                disabled={Object.values(ratings).every((r) => r === 0)}
-                                className="w-full py-4 text-lg font-bold text-white transition-opacity bg-gradient-to-r from-primary-normal to-secondary-normal rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90"
+                                disabled={isDisabled}
+                                className={`w-1/2 py-3 text-lg font-bold text-white px-7 place-self-center ${isDisabled ? "bg-gradient-to-r from-silver-very-dark to-silver-dark" : "bg-gradient-to-r from-primary to-primary-light"} rounded-xl`}
                             >
                                 Submit Your Review
                             </button>
@@ -192,7 +188,6 @@ const RateUs = () => {
                     </form>
                 </div>
 
-                {/* Trust Note */}
                 <div className="max-w-xl p-10 text-sm text-center text-silver-very-light/80">
                     <p>
                         We read every review. Your feedback directly influences new features
@@ -200,7 +195,6 @@ const RateUs = () => {
                     </p>
                 </div>
             </div>
-            {/* <Footer /> */}
         </div>
     );
 };

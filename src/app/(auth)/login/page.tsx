@@ -1,5 +1,5 @@
-import LoginPopUp from "@/components/ui/RegistrationPopup/LoginPopup/LoginPopup"
+import Login from "@/components/ui/RegistrationPopup/Login/Login"
 
-export default function Login() {
-    return <LoginPopUp />
+export default function LoginPage() {
+    return <Login />
 }

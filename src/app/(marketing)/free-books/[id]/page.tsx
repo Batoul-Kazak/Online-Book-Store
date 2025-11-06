@@ -66,7 +66,7 @@ export default async function BookDetails({ params }: BookDetailsProps) {
             )}
           </div>
           <div className="md:col-span-2">
-            <h1 className="text-3xl font-bold text-silver-very-light mb-4">
+            <h1 className="text-2xl font-bold text-silver-very-light mb-4">
               {book.title}
             </h1>
             <div className="space-y-3 text-silver-very-light">

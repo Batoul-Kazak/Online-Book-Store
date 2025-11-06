@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="duration-200 bg-light-black dark:text-white">
+    <div className="duration-200 dark:text-white">
       <HeroSection />
       <BookSearch />
       <BestBooks />

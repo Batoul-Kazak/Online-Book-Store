@@ -13,7 +13,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const [showAddToCartPopup, setShowAddToCartPopup] = useState(false);
   const [showSignUpPopup, setShowSignUpPopup] = useState(false);
-  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   const [bookDetails, setBookDetails] = useState({});
   const [currentOrderedBookInfo, setCurrentOrderedBookInfo] = useState({});
@@ -67,8 +67,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
         handleAddToCartPopup,
         showSignUpPopup,
         setShowSignUpPopup,
-        showLoginPopup,
-        setShowLoginPopup,
+        showLogin,
+        setShowLogin,
       }}
     >
       {children}

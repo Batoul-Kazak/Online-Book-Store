@@ -51,14 +51,14 @@ const DarkMode = () => {
   if (resolvedTheme === "dark")
     return (
       <button onClick={() => setTheme("light")}>
-        <FaSun />
+        <FaSun className="text-silver-dark" />
       </button>
     );
 
   if (resolvedTheme === "light")
     return (
       <button onClick={() => setTheme("dark")}>
-        <FaMoon />
+        <FaMoon className="text-silver-dark" />
       </button>
     );
 };

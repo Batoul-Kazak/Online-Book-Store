@@ -883,7 +883,7 @@ export const mockUsers: User[] = [
     email: "bob@example.com",
     password: "securepass",
     name: "Bob Smith",
-    profileImage: profileImg2,
+    profileImage: profileImg5,
     role: "user",
     createdAt: "2024-02-10",
     preferences: {
@@ -911,7 +911,7 @@ export const mockUsers: User[] = [
     email: "carol@example.com",
     password: "carol123",
     name: "Carol Davis",
-    profileImage: profileImg2,
+    profileImage: profileImg1,
     role: "user",
     createdAt: "2024-03-05",
     preferences: {
@@ -939,7 +939,7 @@ export const mockUsers: User[] = [
     email: "dave@example.com",
     password: "davepass",
     name: "Dave Wilson",
-    profileImage: profileImg2,
+    profileImage: profileImg8,
     role: "user",
     createdAt: "2024-03-20",
     preferences: {
@@ -967,7 +967,7 @@ export const mockUsers: User[] = [
     email: "eve@example.com",
     password: "eve12345",
     name: "Eve Brown",
-    profileImage: profileImg2,
+    profileImage: profileImg5,
     role: "user",
     createdAt: "2024-04-01",
     preferences: {
@@ -995,7 +995,7 @@ export const mockUsers: User[] = [
     email: "frank@example.com",
     password: "frankpass",
     name: "Frank Miller",
-    profileImage: profileImg2,
+    profileImage: profileImg3,
     role: "user",
     createdAt: "2024-04-10",
     preferences: {
@@ -1023,7 +1023,7 @@ export const mockUsers: User[] = [
     email: "grace@example.com",
     password: "grace123",
     name: "Grace Lee",
-    profileImage: profileImg2,
+    profileImage: profileImg4,
     role: "user",
     createdAt: "2024-05-01",
     preferences: {
@@ -1051,7 +1051,7 @@ export const mockUsers: User[] = [
     email: "henry@example.com",
     password: "henrypass",
     name: "Henry Taylor",
-    profileImage: profileImg2,
+    profileImage: profileImg7,
     role: "user",
     createdAt: "2024-05-15",
     preferences: {
@@ -1079,7 +1079,7 @@ export const mockUsers: User[] = [
     email: "admin@example.com",
     password: "admin123",
     name: "Admin User",
-    profileImage: profileImg3,
+    profileImage: profileImg9,
     role: "admin",
     createdAt: "2023-12-01",
     preferences: {

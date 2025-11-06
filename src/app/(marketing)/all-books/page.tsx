@@ -9,7 +9,7 @@ const AllBooksPage = () => {
       {/* <NavBar /> */}
       {/* <PaidBooks /> */}
       <div className="flex flex-col place-content-center place-items-center">
-        <h1 className="p-20 font-serif text-6xl font-bold text-primary">
+        <h1 className="p-20 font-serif text-5xl font-bold text-primary">
           Our Books
         </h1>
         <FreeBooks />

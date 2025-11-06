@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import { Book } from "@/types/book";
+import { FaSearch } from "react-icons/fa";
 
 type sortByType = "title" | "id";
 type selectedLanguageType = "en" | "ar" | "ru" | "de" | "all";
@@ -183,25 +184,28 @@ const FreeBooks = () => {
   };
 
   return (
-    <div className="w-full p-6 ">
-      <div className="mx-auto max-w-7xl">
+    <div className="w-full p-6 pt-30">
+      <div className="flex flex-col mx-auto max-w-7xl">
         <div className="mb-8 text-center">
-          <h1 className="mb-2 text-4xl font-bold text-silver-very-light">
+          <h1 className="mb-2 text-3xl font-bold text-silver-very-light">
             Explore All Our Books
           </h1>
           <p className="text-silver-very-dark"></p>
         </div>
-        <div className="mb-6">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search books by title or author..."
-            className="w-full p-4 text-xl border-2 border-white rounded-xl bg-silver-dark text-silver-very-light placeholder-silver-light focus:outline-0 focus:ring-2 focus:ring-primary"
-          />
+        <div className="flex flex-col w-1/2 mb-6 place-self-center">
+          <div className="relative flex gap-5 place-items-center">
+            <FaSearch className="absolute text-3xl top-3 right-5" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search books by title or author..."
+              className="w-full p-4 text-xl border-2 place-self-center rounded-xl border-silver-dark text-silver-very-light placeholder-silver-light focus:outline-0 focus:ring-2 focus:ring-primary"
+            />
+          </div>
           {books.length <= 0 && (
             <p className="justify-center p-2 text-secondary">
-              It seems like you are offline
+              hmm, It seems like you are offline
             </p>
           )}
         </div>

@@ -25,7 +25,7 @@ const NavBar = () => {
     currentLoggedinUser,
     setShowSignUpPopup,
     setCurrentLoggedinUser,
-    setShowLoginPopup,
+    setShowLogin,
   } = useContext(AppContext); //
   const { t, lang, setLang } = useTranslation();
   const pathname = usePathname();
@@ -38,32 +38,34 @@ const NavBar = () => {
     <nav className="fixed top-0 right-0 w-full duration-200 bg-transparent shadow-lg z-800 dark:text-white">
       {/* <TestColors /> */}
       {/* <h1 className="text=4xl bg-primary">Heeeel</h1> */}
-      <div className="w-full p-16 py-3 bg-white sm:p-25 sm:py-0 dark:bg-primary/75">
+      <div className="w-full p-16 py-3 bg-white/60 sm:p-25 sm:py-0 ">
         <div className="flex justify-between ">
-          <div>
+          <div className="flex flex-col transition-all delay-100 hover:scale-105">
             <Link
               href="/"
-              className="flex gap-2 text-2xl font-bold sm:text-3xl"
+              className="flex flex-col font-bold place-content-center place-items-center"
             >
               <Image src={Logo} alt="logo" className="w-10" />
+              <h1 className="font-bold place-self-center text-primary">BookHaven</h1>
             </Link>
-            <p>Books</p>
           </div>
           <div className="flex items-center justify-between gap-4">
-            <ul className="flex items-center gap-4 text-xl sm:flex">
-              {APP_LINKS.map((item) => {
-                const isActive = pathname === item.link || pathname.startsWith(item.link);
-                return (
-                  <li key={item.id}>
-                    <Link
-                      href={item.link}
-                      className={` ${isActive ? "text-secondary-very-light" : "text-silver-very-light"} inline-block px-4 font-bold duration-300 hover:scale-105 hover:text-white`}
-                    >
-                      {(item.key).replace('_', ' ')}
-                    </Link>
-                  </li>
-                )
-              })}
+            <ul className="flex items-center gap-4 sm:flex">
+              <div className="flex flex-wrap">
+                {APP_LINKS.map((item) => {
+                  const isActive = pathname === item.link || pathname.startsWith(item.link);
+                  return (
+                    <li key={item.id}>
+                      <Link
+                        href={item.link}
+                        className={` ${isActive ? "text-secondary" : "text-silver-very-dark"} text-sm text-nowrap inline-block px-4 font-bold duration-300 hover:scale-105 `}
+                      >
+                        {(item.key).replace('_', ' ')}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </div>
 
 
               <li className="relative cursor-pointer group">
@@ -78,13 +80,13 @@ const NavBar = () => {
                   <select
                     value={lang}
                     onChange={(e) => setLang(e.target.value as any)}
-                    className="bg-[#0065ab]"
+                    className="text-sm text-silver-dark "
                   >
                     {languages.map((lang_) => (
                       <option
                         key={lang_.value}
                         value={lang_.value}
-                        className="bg-silver-very-dark text-secondary"
+                        className="bg-white text-secondary"
                       >
                         {lang_.name}
                       </option>
@@ -95,31 +97,32 @@ const NavBar = () => {
               <li>
                 <Link
                   href="/cart"
-                  className="flex items-center gap-3 px-4 py-1 text-white duration-300 rounded-full bg-gradient-to-r from-primary-normal to-secondary-normal hover:scale-105"
+                  className="flex items-center gap-3 px-4 py-1 text-sm duration-300 rounded-full text-silver-dark bg-gradient-to-r from-primary-normal to-secondary-normal hover:scale-105"
                 >
                   Cart
-                  <FaCartShopping className="text-xl text-white cursor-pointer drop-shadow-sm" />
+                  <FaCartShopping className="cursor-pointer text-silver-dark drop-shadow-sm" />
                 </Link>
               </li>
-              <li className="duration-300  cursor-pointer hover:scale-110 hover:*:text-white hover:*:border-silver-light">
+              <li className="duration-300 cursor-pointer hover:scale-110 ">
+                {/* hover:*:text-white hover:*:border-silver-light */}
                 {currentLoggedinUser ? (
                   <button
                     onClick={() => setCurrentLoggedinUser(null)}
-                    className="flex gap-1 p-2 outline-white"
+                    className="flex gap-1 p-2 outline-white text-silver-dark"
                   >
                     Sign out
                   </button>
                 ) : (
                   <Link
                     href="/login"
-                    className="flex gap-1 p-2 font-bold underline outline-white"
+                    className="flex gap-1 p-2 font-bold underline text-silver-dark outline-white"
                   >
                     {/* <FaPerson /> */}
                     Login
                   </Link>
                 )}
               </li>
-              <li className="relative cursor-pointer duration-300 hover:scale-110 hover:*:text-white hover:*:border-silver-light">
+              <li className="relative duration-300 cursor-pointer hover:scale-110">
                 {currentLoggedinUser ? (
                   <Link href={`/user-profile/${currentLoggedinUser.id}`}>
                     <Image
@@ -128,7 +131,7 @@ const NavBar = () => {
                           ? currentLoggedinUser.profileImage
                           : defaultProfileImage
                       }
-                      className="rounded-full w-15 h-15 border-1 border-silver-dark"
+                      className="w-10 h-10 rounded-full border-1 border-silver-dark"
                       alt="user-profile-img"
                     />
                     <p className="absolute p-1 font-bold top-10 -right-10 text-secondary-very-light rounded-xl bg-primary-dark hover:border-none">
@@ -138,7 +141,7 @@ const NavBar = () => {
                 ) : (
                   <Link
                     href="/signup"
-                    className="flex gap-1 p-2 font-bold underline outline-white"
+                    className="flex gap-1 p-2 font-bold underline text-silver-dark outline-white"
                   >
                     Sign Up
                   </Link>

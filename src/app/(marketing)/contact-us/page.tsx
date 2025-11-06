@@ -117,52 +117,48 @@ const ContactUsPageInfo = [
 
 const Contact = () => {
   return (
-    <div className="flex flex-col place-content-center place-items-center gap-10 w-full">
-      {/* <NavBar /> */}
-      <div className="flex-col flex items-center gap-16 py-30 w-9/10 min-h-screen">
-        <div className="text-center">
-          <h1 className="text-5xl md:text-6xl font-bold uppercase font-serif text-primary mb-6">
-            Contact Us
-          </h1>
-          <p className="text-2xl text-silver-light p-10">
-            Whether you are a reader, author or just curious, we are here to
-            help
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl px-4"></div>
-          <div className="flex place-self-center max-w-[90rem] overflow-x-scroll gap-10 p-10 w-full">
-            {ContactUsPageInfo.map((card) => (
-              <div
-                key={card.address}
-                className="bg-dark-black p-6 min-w-[30rem] rounded-xl bg-gradient-to-br from-silver-very-dark/40 to-light-black/40 w-full shadow-lg border border-silver-dark hover:border-secondary transition-all duration-300"
-              >
-                <h3 className="text-2xl font-bold text-secondary">
-                  {card.address}
-                </h3>
-                <p className="text-silver-very-light text-sm">{card.content}</p>
-                <div className="flex place-items-center place-content-center gap-5 pt-5">
-                  <div className="w-10 h-10 p-2 rounded-full bg-primary-dark flex place-items-center place-content-center">
-                    <FaEnvelope className="text-silver-very-light text-xl" />
-                  </div>
-                  <Link
-                    href={card.link}
-                    className="text-primary hover:underline font-medium flex place-items-center gap-1"
-                  >
-                    {card.linkContent}
-                  </Link>
+    <div className="flex flex-col items-center min-h-screen gap-16 py-30 w-9/10">
+      <div className="text-center">
+        <h1 className="mb-6 font-serif text-4xl font-bold uppercase md:text-5xl text-primary">
+          Contact Us
+        </h1>
+        <p className="p-10 text-xl text-silver-light">
+          Whether you are a reader, author or just curious, we are here to
+          help
+        </p>
+        <div className="grid w-full max-w-6xl grid-cols-1 gap-8 px-4 md:grid-cols-2 lg:grid-cols-3"></div>
+        <div className="flex place-self-center max-w-[90rem] overflow-x-scroll gap-10 p-10 w-2/3">
+          {ContactUsPageInfo.map((card) => (
+            <div
+              key={card.address}
+              className="p-6 transition-all duration-300 border shadow-lg rounded-xl bg-black/20 border-silver-dark hover:border-secondary"
+            >
+              <h3 className="text-xl font-bold text-secondary">
+                {card.address}
+              </h3>
+              <p className="text-sm text-silver">{card.content}</p>
+              <div className="flex gap-5 pt-5 place-items-center place-content-center">
+                <div className="flex w-10 h-10 p-2 rounded-full bg-primary-dark place-items-center place-content-center">
+                  <FaEnvelope className="text-xl text-silver-very-light" />
                 </div>
+                <Link
+                  href={card.link}
+                  className="flex gap-1 font-medium text-primary hover:underline place-items-center"
+                >
+                  {card.linkContent}
+                </Link>
               </div>
-            ))}
-          </div>
-          <div className="text-center max-w-xl text-silver-very-light italic px-4 place-self-center p-15">
-            <p>
-              This library was built by readers, for readers. Every message help
-              us make the experience better.
-              <span className="text-secondary">The Books Team</span>
-            </p>
-          </div>
+            </div>
+          ))}
+        </div>
+        <div className="max-w-xl px-4 italic text-center text-silver-very-light place-self-center p-15">
+          <p>
+            This library was built by readers, for readers. Every message help
+            us make the experience better.
+            <span className="text-secondary">The Books Team</span>
+          </p>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

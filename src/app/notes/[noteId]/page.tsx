@@ -5,5 +5,5 @@ export default async function Note({
 }) {
   const noteId_ = (await params).noteId;
 
-  return <div className="text-5xl text-hue p-10">Note {noteId_}</div>;
+  return <div className="text-4xl text-hue p-10">Note {noteId_}</div>;
 }

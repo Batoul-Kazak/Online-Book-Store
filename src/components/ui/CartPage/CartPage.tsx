@@ -52,10 +52,10 @@ const CartPage = () => {
 
   if (currentUserCurrentCart.length == 0) {
     return (
-      <div className="flex flex-col gap-25">
+      <div className="flex flex-col gap-25 pt-30">
         {/* <NavBar /> */}
         <div className="flex flex-col gap-10 place-content-center place-items-center">
-          <p className="text-2xl">
+          <p className="text-xl">
             The Cart List is empty, click the button below if you want to
             explore our books
           </p>
@@ -69,7 +69,7 @@ const CartPage = () => {
 
   if (isConfirmed)
     return (
-      <div>
+      <div className="pt-30">
         <p>Thank you for using our service</p>
         <Link href="/">Discover more books</Link>
       </div>
@@ -78,8 +78,8 @@ const CartPage = () => {
   return (
     <div>
       {/* <NavBar /> */}
-      <div className="flex flex-col gap-5 px-20 pb-10 text-center text-white bg-my-black place-content-center place-items-center">
-        <h1 className="w-full py-10 text-5xl text-white rounded-bl-4xl rounded-br-4xl bg-secondary-dark">
+      <div className="flex flex-col gap-5 px-20 pb-10 text-center text-white pt-30 bg-my-black place-content-center place-items-center">
+        <h1 className="w-full py-10 text-4xl text-white rounded-bl-4xl rounded-br-4xl bg-secondary-dark">
           {currentLoggedinUser.name} Cart
         </h1>
         <table className="flex flex-col w-full p-10 place-content-center place-items-center">

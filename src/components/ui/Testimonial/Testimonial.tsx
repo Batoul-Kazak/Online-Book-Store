@@ -46,7 +46,7 @@ const Testimonial = () => {
     <>
       <div data-aos="fade-up" data-aos-duration="300" className="py-10">
         <div className="text-center mb-20 max-w-[400px] mx-auto pt-25 flex flex-col gap-8">
-          <h1 className="text-5xl bg-clip-text text-transparent bg-gradient-to-r from-secondary to-white">
+          <h1 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-secondary to-white">
             What our customers says?
           </h1>
           <div>
@@ -82,7 +82,7 @@ const Testimonial = () => {
                     <div className="flex items-center gap-4">
                       <div className="flex flex-col gap-5">
                         <p className="text-silver-light">{data.text}</p>
-                        <h1 className="text-2xl font-bold text-blue-400 dark:text-light">
+                        <h1 className="text-xl font-bold text-blue-400 dark:text-light">
                           {data.name}
                         </h1>
                       </div>

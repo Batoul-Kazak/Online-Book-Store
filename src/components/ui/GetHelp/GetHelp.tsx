@@ -45,7 +45,7 @@
 //         <NavBar />
 //         <QuickAccessBar url="get-help" linksArr={sections} />
 //       </div>
-//       <h1 className="font-serif text-6xl font-bold uppercase text-primary">
+//       <h1 className="font-serif text-5xl font-bold uppercase text-primary">
 //         Your guide to our library
 //         {/* t("help", "quick_description.address").split("?")[0] */}
 //       </h1>
@@ -61,7 +61,7 @@
 //               <div className="w-full h-[10rem] flex place-content-center p-10">
 //                 <div className="w-full h-1 px-10 bg-light-black"></div>
 //               </div>
-//               <h2 className="font-serif text-5xl font-bold text-secondary">
+//               <h2 className="font-serif text-4xl font-bold text-secondary">
 //                 {section.address}
 //               </h2>
 //               {idx === 2 ? (
@@ -74,7 +74,7 @@
 //                 >
 //                   <p
 //                     className={`${
-//                       idx === 2 ? "text-2xl font-light" : "text-2xl"
+//                       idx === 2 ? "text-xl font-light" : "text-xl"
 //                     }`}
 //                   >
 //                     {section.content}
@@ -128,7 +128,7 @@ const GetHelp = () => {
                 {/* <NavBar /> */}
                 <QuickAccessBar linksArr={getHelpQuickLinks} />
             </div>
-            <h1 className="font-serif text-6xl font-bold uppercase text-primary">
+            <h1 className="font-serif text-5xl font-bold uppercase text-primary">
                 Your guide to our library
             </h1>
             <Image
@@ -141,9 +141,9 @@ const GetHelp = () => {
                     <div id={`${link?.tag}`} key={link?.tag} className="">
                         <section className="flex flex-col gap-20">
                             <div className="w-full h-[10rem] flex place-content-center p-10">
-                                <div className="w-full h-1 px-10 bg-light-black"></div>
+                                <div className="w-full h-1 px-10"></div>
                             </div>
-                            <h2 className="font-serif text-5xl font-bold text-secondary">
+                            <h2 className="font-serif text-4xl font-bold text-secondary">
                                 {/* {link?.address} */}
                                 {t("help.quick_description.address")}
                             </h2>
@@ -155,7 +155,7 @@ const GetHelp = () => {
                                         }`}
                                 >
                                     <p
-                                        className={`${link.image ? "text-2xl font-roboto" : "text-2xl"
+                                        className={`${link.image ? "text-xl font-roboto" : "text-xl"
                                             }`}
                                     >
                                         {/* {link.content} */}

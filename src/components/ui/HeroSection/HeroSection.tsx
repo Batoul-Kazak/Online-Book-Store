@@ -37,7 +37,7 @@ const HeroSection = () => {
   return (
     <>
       <div
-        className="min-h-[550px] sm:min-h-[650px] flex justify-center items-center dark:bg-dark-black dark:text-white duration-200"
+        className="min-h-[550px] sm:min-h-[650px] flex justify-center items-center dark:bg-dark dark:text-white duration-200"
         style={bgImage}
       >
         <div className="container pb-8 sm:pb-0">
@@ -50,7 +50,7 @@ const HeroSection = () => {
                 data-aos="zoom-out"
                 data-aos-duration="500"
                 data-aos-once="true"
-                className="text-5xl font-bold sm:text-6xl lg:text-7xl"
+                className="text-4xl font-bold sm:text-5xl lg:text-7xl"
               >
                 {title}
                 <p className="text-sm text-right text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">
@@ -61,14 +61,14 @@ const HeroSection = () => {
                 data-aos="slide-up"
                 data-aos-duration="500"
                 data-aos-delay="100"
-                className="text-2xl text-transparent bg-clip-text bg-gradient-to-l from-secondary to-white"
+                className="text-xl text-transparent bg-clip-text bg-gradient-to-l from-secondary to-white"
               >
                 {description}
               </p>
               <div>
                 <Link
                   href="/cart"
-                  className="p-5 text-2xl font-bold text-white duration-200 rounded-full bg-secondary hover:scale-105"
+                  className="p-5 text-xl font-bold text-white duration-200 rounded-full bg-secondary hover:scale-105"
                 >
                   Order
                   {/* {t("common.books")} */}

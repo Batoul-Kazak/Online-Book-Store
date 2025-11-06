@@ -18,7 +18,7 @@ const BookDetailsPage = ({ bookInfo }) => {
   return (
     <div className="">
       {/* <NavBar /> */}
-      <div className="flex gap-10 p-20 dark:bg-light-black">
+      <div className="flex gap-10 p-20 ">
         <Image
           src={bookInfo?.img}
           alt="book-cover"
@@ -31,7 +31,7 @@ const BookDetailsPage = ({ bookInfo }) => {
           <div className="flex flex-col gap-10 py-2 text-xl px-15">
             <div className="flex justify-between p-5 border-b-2 border-b-silver-light place-content-center place-items-center">
               <div className="flex flex-col gap-3">
-                <h2 className="text-3xl text-secondary ">
+                <h2 className="text-2xl text-secondary ">
                   Written By {bookInfo?.author[lang]}
                 </h2>
                 <div className="flex justify-between ">
@@ -55,7 +55,7 @@ const BookDetailsPage = ({ bookInfo }) => {
                     <span className="font-bold text-yellow-700">
                       {bookInfo?.rating}
                     </span>
-                    <div className="p-2 text-2xl duration-300 cursor-pointer border-1 text-primary-light hover:scale-105">
+                    <div className="p-2 text-xl duration-300 cursor-pointer border-1 text-primary-light hover:scale-105">
                       <FaBookBookmark />
                     </div>
                     <p className="ml-10 font-bold text-lime-600">

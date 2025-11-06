@@ -68,7 +68,7 @@ const AddToCartPopup = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 z-20 w-screen h-screen bg-black/60 backdrop-blur-sm">
+    <div className="fixed top-0 left-0 z-20 w-screen h-screen backdrop-blur-sm">
       <form
         action="post"
         onSubmit={handleAddToCart}
@@ -81,11 +81,11 @@ const AddToCartPopup = () => {
 
         <section className="flex flex-col gap-4 place-items-center">
           {/* <div className="fixed"> */}
-          <h1 className="text-4xl font-bold text-center text-primary">
+          <h1 className="text-3xl font-bold text-center text-primary">
             Adding to Cart
           </h1>
           {/* </div> */}
-          <h2 className="flex gap-3 text-2xl text-secondary-dark">
+          <h2 className="flex gap-3 text-xl text-secondary-dark">
             {currentOrderedBookInfo.title}(
             <span className="font-mono text-lime-300">
               {currentOrderedBookInfo.price}$
@@ -141,18 +141,18 @@ const AddToCartPopup = () => {
             className="p-4 border-b-2 outline-none text-secondary border-b-secondary"
             id="language"
           >
-            <option value="en" className="text-secondary bg-silver-very-dark">
+            <option value="en" className="text-secondary ">
               English
             </option>
-            <option value="du" className="text-secondary bg-silver-very-dark">
+            <option value="du" className="text-secondary ">
               German
             </option>
-            <option value="ar" className="text-secondary bg-silver-very-dark">
+            <option value="ar" className="text-secondary ">
               Arabic
             </option>
             <option
               value="ar"
-              className="text-secondary bg-silver-very-dark"
+              className="text-secondary "
               onClick={() => setShowInputLanguage(true)}
             >
               Other
@@ -192,19 +192,19 @@ const AddToCartPopup = () => {
           >
             <option
               value="third edition (last)"
-              className="text-secondary bg-silver-very-dark"
+              className="text-secondary "
             >
               third edition (last)
             </option>
             <option
               value="second edition"
-              className="text-secondary bg-silver-very-dark"
+              className="text-secondary "
             >
               second edition
             </option>
             <option
               value="first edition"
-              className="text-secondary bg-silver-very-dark"
+              className="text-secondary "
             >
               first edition
             </option>

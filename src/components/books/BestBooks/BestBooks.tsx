@@ -13,7 +13,7 @@ const BestBooks = () => {
           {/* <p className="text-sm bg-clip-text dark:text-white bg-gradient-to-r from-primary-normal to-secondary-normal">
                     Trending Books
                   </p> */}
-          <h1 className="text-5xl font-bold text-center">Best Books</h1>
+          <h1 className="text-4xl font-bold text-center">Best Books</h1>
           <p className="text-xl text-center text-silver-light">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
             dicta tempora doloremque et ea, sit nihil beatae, ex, iure enim

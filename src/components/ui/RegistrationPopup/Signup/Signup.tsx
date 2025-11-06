@@ -4,6 +4,8 @@ import { AppContext } from "@/context/AppContext";
 import { mockUsers } from "@/_lib";
 import { useContext, useState } from "react";
 import { FaWindowClose } from "react-icons/fa";
+import Image from "next/image";
+import sideImage from "@/app/assets/website/pexels-mccutcheon-1148399.jpg"
 
 const formDataInitialState = {
   name: "",
@@ -20,8 +22,7 @@ const errorsInitialState = {
   categories: "",
 };
 
-const SignUpPopup = () => {
-  const { setShowSignUpPopup, setCurrentLoggedinUser } = useContext(AppContext);
+const Signup = () => {
   const [formData, setFormData] = useState(formDataInitialState);
   const [errors, setErrors] = useState(errorsInitialState);
   const availableCategories = [
@@ -143,22 +144,19 @@ const SignUpPopup = () => {
       notes: [] as string[],
     };
     setCurrentLoggedinUser(newUser);
-    setShowSignUpPopup(false);
   }
 
   return (
-    <div className="h-screen w-screen fixed top-0 left-0 z-20 bg-black/60 backdrop-blur-sm">
-      <form
-        action="post"
-        onSubmit={handleSubmit}
-        className="max-h-[40rem] my-scrollbar overflow-y-scroll p-10 flex max-w-[40rem] gap-10 flex-col border-2 border-double pt-20 rounded-2xl bg-gradient-to-br from-silver-very-dark to-light-black text-silver-very-light fixed z-20 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-      >
-        <FaWindowClose
-          onClick={() => setShowSignUpPopup(false)}
-          className="absolute top-5 right-5 w-5 h-5 cursor-pointer hover:scale-105 duration-300"
-        />
-        <div className="flex flex-col gap-6 w-full my-scrollbar">
-          <h2 className="text-3xl font-bold text-center text-primary">
+
+    <form
+      action="post"
+      onSubmit={handleSubmit}
+      className="flex gap-10 p-10 flex-roww-3/5 pt-30 rounded-2xl text-silver-very-light"
+    >
+      <div className="flex flex-col w-3/5 gap-15">
+
+        <div className="flex flex-col w-full gap-6 my-scrollbar">
+          <h2 className="text-2xl font-bold text-center text-primary">
             Create Account
           </h2>
           <div className="flex flex-col gap-2">
@@ -175,7 +173,7 @@ const SignUpPopup = () => {
               className="p-3 rounded-2xl bg-silver-dark text-silver-very-light placeholder:bg-silver focus:outline-none focus:ring-2 focus:ring-primary"
             />
             {errors.name && (
-              <span className="text-secondary text-sm">{errors.name}</span>
+              <span className="text-sm text-secondary">{errors.name}</span>
             )}
           </div>
           <div className="flex flex-col gap-2">
@@ -190,7 +188,7 @@ const SignUpPopup = () => {
               className="p-3 rounded-2xl bg-silver-dark text-silver-very-light placeholder:bg-silver focus:outline-none focus:ring-2 focus:ring-primary"
             />
             {errors.email && (
-              <span className="text-secondary text-sm">{errors.email}</span>
+              <span className="text-sm text-secondary">{errors.email}</span>
             )}
           </div>
           <div className="flex flex-col gap-2">
@@ -205,7 +203,7 @@ const SignUpPopup = () => {
               className="p-3 rounded-2xl bg-silver-dark text-silver-very-light placeholder:bg-silver focus:outline-none focus:ring-2 focus:ring-primary"
             />
             {errors.password && (
-              <span className="text-secondary text-sm">{errors.password}</span>
+              <span className="text-sm text-secondary">{errors.password}</span>
             )}
           </div>
           <div className="flex flex-col gap-2">
@@ -220,14 +218,14 @@ const SignUpPopup = () => {
               className="p-3 rounded-2xl bg-silver-dark text-silver-very-light placeholder:bg-silver focus:outline-none focus:ring-2 focus:ring-primary"
             />
             {errors.confirmPassword && (
-              <span className="text-secondary text-sm">
+              <span className="text-sm text-secondary">
                 {errors.confirmPassword}
               </span>
             )}
           </div>
           <div className="flex flex-col gap-2">
             <label className="font-semibold">Favorite Categories </label>
-            <div className="grid-cols-2 grid gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {availableCategories.map((category) => (
                 <div key={category} className="flex items-center">
                   <input
@@ -235,11 +233,11 @@ const SignUpPopup = () => {
                     id={category}
                     checked={formData.favoriteCategories.includes(category)}
                     onChange={() => toggleCategory(category)}
-                    className="w-4 h-4 text-primary bg-silver-dark border-silver rounded focus:ring-primary focus:ring-2"
+                    className="w-4 h-4 rounded text-primary bg-silver-dark border-silver focus:ring-primary focus:ring-2"
                   />
                   <label
                     htmlFor={category}
-                    className="ml-2 text-silver-very-light cursor-pointer"
+                    className="ml-2 cursor-pointer text-silver-very-light"
                   >
                     {category}
                   </label>
@@ -247,7 +245,7 @@ const SignUpPopup = () => {
               ))}
             </div>
             {errors.categories && (
-              <span className="text-secondary text-sm">
+              <span className="text-sm text-secondary">
                 {errors.categories}
               </span>
             )}
@@ -256,13 +254,15 @@ const SignUpPopup = () => {
         <button
           type="submit"
           role="button"
-          className="p-2 w-2/3 place-self-center bg-primary rounded-xl bg-gradient-to-b from-primary to-primary-dark text-xl font-bold hover:scale-105 duration-300"
+          className="w-2/3 p-2 text-xl font-bold duration-300 place-self-center bg-primary rounded-xl bg-gradient-to-b from-primary to-primary-dark hover:scale-105"
         >
           Create Account
         </button>
-      </form>
-    </div>
+      </div>
+      <Image src={sideImage} alt="library" className="w-2/5 mask-b-from-50% mask-radial-[50%_90%] mask-radial-from-80%" />
+    </form>
+
   );
 };
 
-export default SignUpPopup;
+export default Signup;

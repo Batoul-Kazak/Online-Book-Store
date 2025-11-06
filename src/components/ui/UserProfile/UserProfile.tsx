@@ -74,10 +74,10 @@
 //       <div className="flex flex-col gap-10 px-20 py-10 ">
 //         <section className="flex gap-10 place-content-center place-items-center">
 //           <div className="flex flex-col gap-5 ">
-//             <h1 className="text-6xl text-primary">
+//             <h1 className="text-5xl text-primary">
 //               {currentLoggedinUser.name}
 //             </h1>
-//             <h2 className="text-2xl">{currentLoggedinUser.email}</h2>
+//             <h2 className="text-xl">{currentLoggedinUser.email}</h2>
 //             <p className="font-bold text-secondary">
 //               Role: {currentLoggedinUser.role}
 //             </p>
@@ -107,7 +107,7 @@
 //           <section className="">
 //             <div className="flex flex-col gap-5">
 //               <div className="">
-//                 <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">
+//                 <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">
 //                   My Notes
 //                 </h2>
 //                 {currentLoggedinUser.notes.length > 0 && (
@@ -200,7 +200,7 @@
 //           </section>
 //           <section className="">
 //             <div className="flex flex-col gap-5">
-//               <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">
+//               <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">
 //                 Current Reading Books
 //               </h2>
 //               {currentLoggedinUser.currentReadings.length > 0 ? (
@@ -222,7 +222,7 @@
 //           </section>
 //           <section className="">
 //             <div className="flex flex-col gap-5">
-//               <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">
+//               <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">
 //                 Finished Reading Books
 //               </h2>
 //               {currentLoggedinUser.readingHistory.length > 0 ? (
@@ -246,7 +246,7 @@
 //           </section>
 //           <section className="">
 //             <div className="flex flex-col gap-5">
-//               <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">
+//               <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">
 //                 Book Marked Books
 //               </h2>
 //               {currentLoggedinUser.savedBooks.length > 0 ? (
@@ -374,8 +374,8 @@ const UserProfile = () => {
         {/* User Info */}
         <section className="flex gap-10 place-content-center place-items-center">
           <div className="flex flex-col gap-5">
-            <h1 className="text-6xl text-primary">{currentLoggedinUser.name}</h1>
-            <h2 className="text-2xl">{currentLoggedinUser.email}</h2>
+            <h1 className="text-5xl text-primary">{currentLoggedinUser.name}</h1>
+            <h2 className="text-xl">{currentLoggedinUser.email}</h2>
             <p className="font-bold text-secondary">Role: {currentLoggedinUser.role}</p>
             <div className="flex gap-3 place-items-center">
               <h2 className="text-xl">Bookmarked Books: {currentLoggedinUser.savedBooks.length}</h2>
@@ -400,7 +400,7 @@ const UserProfile = () => {
           <section>
             <div className="flex flex-col gap-5">
               <div>
-                <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">My Notes</h2>
+                <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">My Notes</h2>
                 <div className="flex justify-between p-3 pl-10 bg-silver/50">
                   <p>Filters:</p>
                   <div className="flex gap-5">
@@ -496,7 +496,7 @@ const UserProfile = () => {
           {/* Other sections unchanged */}
           <section>
             <div className="flex flex-col gap-5">
-              <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">Current Reading Books</h2>
+              <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">Current Reading Books</h2>
               <div className="flex flex-wrap gap-5 px-10">
                 {currentLoggedinUser.currentReadings.map((bookID) => (
                   <Link
@@ -513,7 +513,7 @@ const UserProfile = () => {
 
           <section>
             <div className="flex flex-col gap-5">
-              <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">Finished Reading Books</h2>
+              <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">Finished Reading Books</h2>
               <div className="flex flex-wrap gap-5 px-10">
                 {currentLoggedinUser.readingHistory.map((bookID) => (
                   <Link
@@ -530,7 +530,7 @@ const UserProfile = () => {
 
           <section>
             <div className="flex flex-col gap-5">
-              <h2 className="p-5 pl-10 text-3xl bg-silver-very-dark/50">Bookmarked Books</h2>
+              <h2 className="p-5 pl-10 text-2xl bg-silver-very-dark/50">Bookmarked Books</h2>
               <div className="flex flex-wrap gap-5 px-10">
                 {currentLoggedinUser.savedBooks.map((bookID) => (
                   <Link

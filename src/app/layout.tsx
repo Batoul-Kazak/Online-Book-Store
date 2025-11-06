@@ -47,29 +47,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* <Head>
-        <Link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head> */}
+
       <body
-        className={`bg-silver-very-light dark:bg-light-black text-dark-black dark:text-silver-very-light ${inter.variable}`}
+        className={`text-dark-black dark:text-silver-very-light ${inter.variable}`}
       >
-        {/* <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-          > */}
         <AppProvider>
           <TranslationProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <NavBar />
               {children}
             </ThemeProvider>
           </TranslationProvider>
         </AppProvider>
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );

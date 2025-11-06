@@ -67,13 +67,12 @@ const CategoryBar = ({ onCategorySelect }: CategoryBarProps) => {
   }, []);
 
   return (
-    <div className="relative flex items-center mb-8 w-[100rem] pt-10 place-self-center bg-light-black">
+    <div className="relative flex items-center mb-8 w-[100rem] pt-10 place-self-center bg-light-">
       <button
         onClick={() => scroll("left")}
         disabled={!canScrollLeft}
-        className={`w-10 h-10 rounded-full bg-silver-very-dark flex items-center justify-center shadow-md transition-opacity ${
-          canScrollLeft ? "opacity-100" : "opacity-40 cursor-not-allowed"
-        }`}
+        className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-opacity ${canScrollLeft ? "opacity-100" : "opacity-40 cursor-not-allowed"
+          }`}
       >
         <span className="text-white">‹</span>
       </button>
@@ -95,9 +94,8 @@ const CategoryBar = ({ onCategorySelect }: CategoryBarProps) => {
       <button
         onClick={() => scroll("right")}
         disabled={!canScrollRight}
-        className={`w-10 h-10 rounded-full bg-silver-very-dark flex items-center justify-center shadow-md transition-opacity ${
-          canScrollRight ? "opacity-100" : "opacity-40 cursor-not-allowed"
-        }`}
+        className={`w-10 h-10 rounded-full  flex items-center justify-center shadow-md transition-opacity ${canScrollRight ? "opacity-100" : "opacity-40 cursor-not-allowed"
+          }`}
       >
         <span className="text-white">›</span>
       </button>

@@ -1,6 +1,7 @@
 
 @import "tailwindcss";
 
+
 :root {
   --bg-primary: var(--color-primary-very-light);    
   --bg-primary-muted: var(--color-primary-light);   
@@ -60,8 +61,29 @@ button:hover {
   transform: scale(1.05);
 }
 
+/* h1 {
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: medium;
+}
+
+p {
+  font-size: small;
+} */
+
  @theme {
-  --text-xl: 1.1rem;
+  --text-sm: 0.8rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.6rem;
+  --text-3xl: 2.2rem;
+  --text-4xl: 2.8rem;
+  --text-5xl: 3.4rem;
   --color-primary: var(--color-primary);    
   --color-primary-dark: var(--color-primary-dark);   
   --color-primary-very-dark: var(--color-primary-very-dark);     
@@ -185,9 +207,8 @@ button:hover {
 }
 
 button{
-  /* bg-gradient-to-r from-primary to-secondary font-bold text-white py-3 px-5 rounded-2xl */
 
-  background-image: linea;
+  background-image: linear-gradient(30deg, --color-primary, --color-primary-light);
 }  
 
 

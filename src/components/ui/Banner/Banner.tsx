@@ -17,7 +17,7 @@ const Banner = () => {
             />
           </div>
           <div className="flex flex-col gap-6">
-            <h1 className="text-4xl sm:text-5xl font-bold">
+            <h1 className="text-3xl sm:text-4xl font-bold">
               Library at your finger print
             </h1>
             <p
@@ -40,19 +40,19 @@ const Banner = () => {
               data-aos-delay="100"
             >
               <div className="flex items-center gap-4">
-                <GrSecure className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-violet-100 dark:bg-violet-400" />
+                <GrSecure className="text-3xl h-12 w-12 shadow-sm p-4 rounded-full bg-violet-100 dark:bg-violet-400" />
                 <p>Quality Books</p>
               </div>
               <div className="flex items-center gap-4">
-                <GrSecure className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 dark:bg-orange-400" />
+                <GrSecure className="text-3xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 dark:bg-orange-400" />
                 <p>Fast Delivery</p>
               </div>
               <div className="flex items-center gap-4">
-                <GrSecure className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-green-100 dark:bg-green-400" />
+                <GrSecure className="text-3xl h-12 w-12 shadow-sm p-4 rounded-full bg-green-100 dark:bg-green-400" />
                 <p>Easy Payment Method</p>
               </div>
               <div className="flex items-center gap-4">
-                <GrSecure className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-yellow-100 dark:bg-yellow-400" />
+                <GrSecure className="text-3xl h-12 w-12 shadow-sm p-4 rounded-full bg-yellow-100 dark:bg-yellow-400" />
                 <p>Get offers on Books</p>
               </div>
             </div>
