@@ -45,13 +45,13 @@ const Testimonial = () => {
   return (
     <>
       <div data-aos="fade-up" data-aos-duration="300" className="py-10">
-        <div className="text-center mb-20 max-w-[400px] mx-auto pt-25 flex flex-col gap-8">
-          <h1 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r from-secondary to-white">
+        <div className="text-center mb-20 max-w-[500px] mx-auto pt-25 flex flex-col gap-8">
+          <h1 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r from-secondary-dark to-secondary">
             What our customers says?
           </h1>
           <div>
-            {/* <h1 className="Books text-xl">Testimonials</h1> */}
-            <p className=" text-silver-light">
+            {/* <h1 className="text-xl Books">Testimonials</h1> */}
+            <p className="text-silver-light">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi vel
               earum praesentium laboriosam consequuntur autem tempora in
               maiores, aspernatur reiciendis sunt nobis temporibus nam aperiam
@@ -70,7 +70,7 @@ const Testimonial = () => {
                 <div className="my-6" key={data.id}>
                   <div
                     key={data.id}
-                    className=" flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl bg-silver-very-dark relative"
+                    className="relative flex flex-col gap-4 px-6 py-8 mx-4 shadow-lg rounded-xl bg-silver-very-dark"
                   >
                     <div>
                       <Image
@@ -81,14 +81,14 @@ const Testimonial = () => {
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="flex flex-col gap-5">
-                        <p className="text-silver-light">{data.text}</p>
+                        <p className="">{data.text}</p>
                         <h1 className="text-xl font-bold text-blue-400 dark:text-light">
                           {data.name}
                         </h1>
                       </div>
                     </div>
 
-                    <p className="text-silver-light text-9xl font-serif absolute top-0 right-0">
+                    <p className="absolute top-0 right-0 font-serif text-9xl">
                       ,,
                     </p>
                   </div>

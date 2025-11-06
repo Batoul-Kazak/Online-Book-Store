@@ -37,20 +37,20 @@ const HeroSection = () => {
   return (
     <>
       <div
-        className="min-h-[550px] sm:min-h-[650px] flex justify-center items-center dark:bg-dark dark:text-white duration-200"
+        className="min-h-[550px] sm:min-h-[650px] flex justify-center items-center dark:bg-dark duration-200"
         style={bgImage}
       >
         <div className="container pb-8 sm:pb-0">
           <div className="grid grid-cols-1 sm:grid-cols-2">
             <div
               data-aos-once="true"
-              className="flex flex-col justify-center order-2 gap-4 pt-12 text-center sm:pt-0 sm:text-left sm:order-1"
+              className="flex flex-col justify-center order-2 gap-10 pt-12 text-center sm:pt-0 sm:text-left sm:order-1"
             >
               <h1
                 data-aos="zoom-out"
                 data-aos-duration="500"
                 data-aos-once="true"
-                className="text-4xl font-bold sm:text-5xl lg:text-7xl"
+                className="p-5 pl-10 text-4xl font-bold text-primary sm:text-5xl lg:text-7xl"
               >
                 {title}
                 <p className="text-sm text-right text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">
@@ -61,14 +61,14 @@ const HeroSection = () => {
                 data-aos="slide-up"
                 data-aos-duration="500"
                 data-aos-delay="100"
-                className="text-xl text-transparent bg-clip-text bg-gradient-to-l from-secondary to-white"
+                className="text-xl font-semibold"
               >
                 {description}
               </p>
               <div>
                 <Link
                   href="/cart"
-                  className="p-5 text-xl font-bold text-white duration-200 rounded-full bg-secondary hover:scale-105"
+                  className="p-5 px-10 text-xl font-bold duration-200 rounded-full bg-gradient-to-r from-secondary-very-dark to-secondary hover:scale-105"
                 >
                   Order
                   {/* {t("common.books")} */}

@@ -16,7 +16,7 @@ import { FaCat, FaFaceGrinHearts, FaFaceSmile, FaGift, FaHeart, FaTelegram } fro
 const Footer = () => {
   return (
     // dark:bg-dark-black dark:text-white text-light-black bg-white
-    <div className="w-full p-10 bg-primary-very-dark/35">
+    <div className="w-full p-10 bg-primary-very-dark/20 text-silver-light">
       <section className="container">
         <div className="grid py-5 md:grid-cols-3">
           <div className="">
